@@ -3,7 +3,7 @@ import MainContainer from "../components/MainContainer";
 
 const Home: NextPage = () => {
   return (
-    <main className="flex flex-col justify-center items-center h-screen">
+    <main className="flex flex-col h-screen w-screen">
       <MainContainer />
     </main>
   );
