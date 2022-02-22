@@ -1,7 +1,12 @@
 import type { NextPage } from "next";
+import MainContainer from "../components/MainContainer";
 
 const Home: NextPage = () => {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <main className="flex flex-col justify-center items-center h-screen">
+      <MainContainer />
+    </main>
+  );
 };
 
 export default Home;

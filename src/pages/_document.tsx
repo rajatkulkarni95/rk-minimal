@@ -5,11 +5,8 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link
-          rel="preload"
-          href="/fonts/IBMPlexMono-Text.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
+          href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500&display=swap"
+          rel="stylesheet"
         />
         <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
         <link href="/static/favicons/site.webmanifest" rel="manifest" />

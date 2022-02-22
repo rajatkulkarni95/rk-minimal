@@ -1,14 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-    font-family: "IBM Plex Mono";
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: optional;
-    src: url(/fonts/IBMPlexMono-Text.woff2) format("woff2");
-}
-
 ::selection {
     background-color: #155e75;
     color: #fefefe;
@@ -24,4 +16,5 @@ html {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-weight: 300;
 }

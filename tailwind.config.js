@@ -9,7 +9,7 @@ module.exports = {
     theme: {
         extend: {},
         fontFamily: {
-            mono: ["IBM Plex Mono", ...fontFamily.mono],
+            mono: ["Roboto Mono", ...fontFamily.mono],
         },
     },
     plugins: [],
