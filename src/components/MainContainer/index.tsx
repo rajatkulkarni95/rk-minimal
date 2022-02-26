@@ -1,5 +1,6 @@
 import Info from "./Info";
 import Projects from "./Projects";
+import Work from "./Work";
 
 const MainContainer = () => {
   return (
@@ -7,6 +8,7 @@ const MainContainer = () => {
       <h1 className="mt-8 mb-10 font-light text-2xl md:ml-16">Hello!</h1>
       <Info />
       <Projects />
+      <Work />
     </div>
   );
 };
