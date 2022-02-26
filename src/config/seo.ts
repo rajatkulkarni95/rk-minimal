@@ -1,10 +1,10 @@
 export const baseUrl =
-  process.env.NODE_ENV === "production" ? "https://rk-minimal.vercel.app" : "";
+  process.env.NODE_ENV === "production" ? "https://rajatkulkarni.dev/" : "";
 export const baseEmail = "rajatkulkarni95@gmail.com";
 
 export const defaultSEO = {
   title: "Rajat Kulkarni",
-  description: "Frontend focused Software Engineer. Okayish at things",
+  description: "Frontend focused Software Engineer. Okayish at most things.",
   openGraph: {
     type: "website",
     locale: "en_US",
