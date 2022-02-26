@@ -20,7 +20,7 @@ const Footer = () => {
             key={link.id}
             target="_blank"
             rel="noreferrer"
-            className="text-xs text-zinc-400 mr-6 md:mr-8 hover:text-zinc-50"
+            className="text-xs text-zinc-400 mr-6 last:mr-0 md:mr-8 md:last:mr-8 hover:text-zinc-50"
           >
             {link.name}
           </a>
