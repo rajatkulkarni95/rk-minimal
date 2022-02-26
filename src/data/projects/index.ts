@@ -1,6 +1,6 @@
 export const projects = [
   {
-    id: "hckrnws",
+    id: "001",
     title: "hckrnws",
     description:
       "A custom frontend for a better reading experience of HackerNews.",
@@ -9,7 +9,7 @@ export const projects = [
     site: "https://hckrnws.com/",
   },
   {
-    id: "getyourfeeds",
+    id: "002",
     title: "getyourfeeds",
     description: "A pretty RSS reader for reading on the go",
     meta: ["React", "Styled-Components"],

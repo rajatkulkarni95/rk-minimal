@@ -7,25 +7,39 @@ import Tag from "../../Common/Tag";
 
 const Projects = () => {
   return (
-    <section className="flex flex-col mt-6">
-      <span className="text-[11px] text-amber-300 mr-4 uppercase">
+    <section className="flex flex-col mt-6 md:flex-row md:items-baseline">
+      <span className="text-[11px] text-amber-300 uppercase md:text-right">
         Projects
       </span>
-      {projects.map((project) => (
-        <div key={project.id} className="flex flex-col my-2">
-          <div className="flex justify-between items-center">
-            <h3 className="text-sm">{project.title}</h3>
-          </div>
-          <p className="text-[13px] mt-1 text-gray-400">
-            {project.description}
-          </p>
-          <section className="flex items-center mt-2">
-            {project.meta.map((tech) => (
-              <Tag text={tech} key={tech} />
-            ))}
+      <section className="flex-col md:ml-3">
+        {projects.map((project) => (
+          <section className="flex items-baseline">
+            <span className="text-xs text-gray-500 font-light mr-2 py-1 border-b border-b-gray-600">
+              {project.id}
+            </span>
+            <div key={project.id} className="flex flex-col my-2">
+              <div className="flex justify-between items-center">
+                <a
+                  href={project.site}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm "
+                >
+                  {project.title}
+                </a>
+              </div>
+              <p className="text-[13px] mt-1 text-gray-400">
+                {project.description}
+              </p>
+              <section className="flex items-center mt-2">
+                {project.meta.map((tech) => (
+                  <Tag text={tech} key={tech} />
+                ))}
+              </section>
+            </div>
           </section>
-        </div>
-      ))}
+        ))}
+      </section>
     </section>
   );
 };
