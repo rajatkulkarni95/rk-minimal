@@ -12,7 +12,7 @@ export const defaultSEO = {
     site_name: "Rajat Kulkarni",
     images: [
       {
-        url: `${baseUrl}/static/og/default.png`,
+        url: `${baseUrl}/img/og/default.png`,
         alt: "Rajat Kulkarni",
       },
     ],
