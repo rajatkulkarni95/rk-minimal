@@ -7,7 +7,7 @@ import Tag from "../../Common/Tag";
 
 const Projects = () => {
   return (
-    <section className="flex flex-col mt-6 md:flex-row md:items-baseline opacity-0 animate-fadeIn [animation-delay:1500ms]">
+    <section className="flex flex-col mt-6 md:flex-row md:items-baseline opacity-0 animate-fadeIn [animation-delay:3500ms]">
       <span className="text-[11px] text-amber-300 uppercase md:text-right">
         Projects
       </span>

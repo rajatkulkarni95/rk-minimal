@@ -47,21 +47,21 @@ html {
     transform-origin: 50% 0;
     background: #181818;
     animation: revealCircle 1s linear forwards;
-    animation-delay: 500ms;
-}
-
-.circle .cover.inner-2 {
-    animation-delay: 1500ms;
-}
-
-.circle .cover.inner-3 {
     animation-delay: 2500ms;
 }
 
-.circle .cover.inner-4 {
+.circle .cover.inner-2 {
     animation-delay: 3500ms;
 }
 
-.circle .cover.inner-5 {
+.circle .cover.inner-3 {
     animation-delay: 4500ms;
+}
+
+.circle .cover.inner-4 {
+    animation-delay: 5500ms;
+}
+
+.circle .cover.inner-5 {
+    animation-delay: 6500ms;
 }
