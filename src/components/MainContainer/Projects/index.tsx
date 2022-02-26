@@ -23,7 +23,7 @@ const Projects = () => {
                   href={project.site}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm "
+                  className="text-sm"
                 >
                   {project.title}
                 </a>
