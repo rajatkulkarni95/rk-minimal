@@ -3,7 +3,7 @@ import { work } from "../../../data/work";
 
 const Work = () => {
   return (
-    <section className="flex flex-col mt-6 md:flex-row md:items-baseline opacity-0 [animation-delay:2000ms] animate-fadeIn">
+    <section className="flex flex-col mt-6 md:flex-row md:items-baseline opacity-0 [animation-delay:2500ms] animate-fadeIn">
       <span className="text-[11px] text-pink-300 uppercase md:w-12 md:text-right">
         Work
       </span>

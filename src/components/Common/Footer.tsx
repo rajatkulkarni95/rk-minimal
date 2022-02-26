@@ -2,7 +2,7 @@ import { links } from "../../data/links";
 
 const Footer = () => {
   return (
-    <footer className="h-12 bg-zinc-900 shadow-md flex items-center py-2 px-6 sticky justify-center md:justify-between bottom-0 opacity-0 animate-fadeIn mt-auto [animation-delay:2500ms] md:[animation-delay:2000ms]">
+    <footer className="h-12 bg-zinc-900 shadow-md flex items-center py-2 px-6 sticky justify-center md:justify-between bottom-0 opacity-0 animate-fadeIn mt-auto [animation-delay:3000ms] md:[animation-delay:2500ms]">
       <aside>
         <a
           href={links[0].url}
