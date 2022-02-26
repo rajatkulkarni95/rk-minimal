@@ -6,7 +6,7 @@ const Info = () => {
       </span>
       <article className="flex flex-col mt-2 md:ml-5 lg:ml-3">
         <p className="text-sm text-gray-200 leading-[1.5em]">
-          I’m Rajat Kulkarni. A Frontend focused Software Engineer, helping
+          I’m Rajat Kulkarni, a Frontend focused Software Engineer, helping
           build clean, user-friendly and accessible applications on the web.{" "}
         </p>
         <p className="text-sm text-gray-200 mt-2 leading-[1.5em]">

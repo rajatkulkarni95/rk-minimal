@@ -22,7 +22,6 @@ html {
 .circle {
     overflow: hidden;
     position: relative;
-    background: #181818;
 }
 
 .circle:before {
@@ -30,7 +29,6 @@ html {
     width: inherit;
     height: inherit;
     border-radius: 50%;
-    background: #181818;
     box-shadow: inset 0 0 0 1px white;
     content: "";
 }
@@ -49,4 +47,5 @@ html {
     transform-origin: 50% 0;
     background: #181818;
     animation: revealCircle 1s linear forwards;
+    animation-delay: 500ms;
 }
