@@ -13,7 +13,7 @@ const Projects = () => {
       </span>
       <section className="flex-col md:ml-3">
         {projects.map((project) => (
-          <section className="flex items-baseline">
+          <section className="flex items-baseline" key={project.id}>
             <span className="text-xs text-gray-500 font-light mr-2 py-1 border-b border-b-gray-600">
               {project.id}
             </span>
