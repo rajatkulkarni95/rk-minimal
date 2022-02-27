@@ -1,14 +1,24 @@
-const Header = () => (
-  <header className="h-20 w-full flex py-2 px-4 md:px-12 md:py-4">
-    <div className="h-16 w-16">
-      <Circle depth={4} bottom={0} />
-      <Circle depth={3} bottom={56} innerClass={2} />
-      <Circle depth={2} bottom={96} innerClass={3} />
-      <Circle depth={1} bottom={120} innerClass={4} />
-      <Circle depth={0.25} bottom={130} innerClass={5} />
-    </div>
-  </header>
-);
+import Location from "@components/Location";
+import useWindowSize from "src/hooks/useWindowSize";
+import { Size } from "src/types";
+
+const Header = () => {
+  const windowSize: Size = useWindowSize();
+  const isMobile = (windowSize?.width ?? 641) < 640;
+
+  return (
+    <header className="h-20 w-full flex justify-between items-center py-2 px-4 md:px-12 md:py-4">
+      <div className="h-16 w-16">
+        <Circle depth={4} bottom={0} />
+        <Circle depth={3} bottom={56} innerClass={2} />
+        <Circle depth={2} bottom={96} innerClass={3} />
+        <Circle depth={1} bottom={120} innerClass={4} />
+        <Circle depth={0.25} bottom={130} innerClass={5} />
+      </div>
+      {isMobile && <Location />}
+    </header>
+  );
+};
 
 type TCircleProps = {
   depth: number;
