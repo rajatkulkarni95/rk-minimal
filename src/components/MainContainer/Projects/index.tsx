@@ -15,7 +15,7 @@ const Projects = () => {
             <span className="text-xs text-gray-500 font-light mr-2 py-1 border-b border-b-gray-600">
               {project.id}
             </span>
-            <div key={project.id} className="flex flex-col my-2 w-full mr-3">
+            <div key={project.id} className="flex flex-col my-2 w-full">
               <div className="flex justify-between items-center">
                 <a
                   href={project.site}
