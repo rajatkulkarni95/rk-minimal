@@ -17,10 +17,8 @@ const Greeting = ({ salutation }: TGreetingProps) => {
   }, [index]);
 
   return (
-    <div className="flex items-center">
-      <h1 className="mt-6 mb-8 font-light text-2xl leading-5 md:ml-16 md:mt-8 md:mb-10">
-        {typing}
-      </h1>
+    <div className="flex items-center mt-8 mb-4 md:ml-14 md:mt-8 md:mb-10">
+      <h1 className="font-light text-2xl leading-5">{typing}</h1>
       <span className="text-xl font-semibold opacity-0 animate-blinking">
         _
       </span>
