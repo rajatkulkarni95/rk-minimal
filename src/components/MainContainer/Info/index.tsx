@@ -11,7 +11,8 @@ const Info = () => {
         </p>
         <p className="text-sm text-gray-200 mt-2 leading-[1.5em]">
           I usually work with Javascript (Typescript on my personal projects),
-          within the React Ecosystem.
+          within the React Ecosystem. Can be found tinkering with animations,
+          Python, Figma and learning Go.
         </p>
       </article>
     </section>
