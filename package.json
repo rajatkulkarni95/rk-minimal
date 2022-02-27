@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-tooltip": "^0.1.7",
     "next": "12.1.0",
     "next-seo": "^5.1.0",
     "react": "17.0.2",

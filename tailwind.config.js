@@ -22,10 +22,21 @@ module.exports = {
                         opacity: 1,
                     },
                 },
+                slideDownAndFade: {
+                    "0%": {
+                        opacity: 0,
+                        transform: "translateY(-2px)",
+                    },
+                    "100%": {
+                        opacity: 1,
+                        transform: "translateY(0)",
+                    },
+                },
             },
             animation: {
                 fadeIn: "fadeIn 1s ease-in forwards",
                 blinking: "blinking 0.75s cubic-bezier(0.4, 0, 0.6, 1) 4",
+                slideDownAndFade: "slideDownAndFade 0.5s ease forwards",
             },
         },
         fontFamily: {
