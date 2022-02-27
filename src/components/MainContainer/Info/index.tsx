@@ -10,9 +10,10 @@ const Info = () => {
           build clean, user-friendly and accessible applications on the web.{" "}
         </p>
         <p className="text-sm text-gray-200 mt-2 leading-[1.5em]">
-          I usually work with Javascript (Typescript on my personal projects),
-          within the React Ecosystem. Can be found tinkering with animations,
-          Python, Figma and learning Go.
+          Usually work with Javascript/Typescript, within the React Ecosystem.
+        </p>
+        <p className="text-sm text-gray-200 mt-2 leading-[1.5em]">
+          Tinkering with animations, Python, Figma.
         </p>
       </article>
     </section>
