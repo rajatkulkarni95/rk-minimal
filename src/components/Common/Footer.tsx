@@ -1,6 +1,11 @@
+import Location from "@components/Location";
 import { links } from "@data/links";
+import useWindowSize from "src/hooks/useWindowSize";
+import { Size } from "src/types";
 
 const Footer = () => {
+  const windowSize: Size = useWindowSize();
+  const isMobile = (windowSize?.width ?? 641) < 640;
   return (
     <footer className="h-12 bg-zinc-900 shadow-md flex items-center py-2 px-6 sticky justify-center md:justify-between bottom-0 opacity-0 animate-fadeIn mt-auto [animation-delay:5000ms] md:[animation-delay:5500ms]">
       <aside>
@@ -13,6 +18,7 @@ const Footer = () => {
           {links[0].name}
         </a>{" "}
       </aside>
+      {!isMobile && <Location />}
       <div>
         {links.slice(1).map((link) => (
           <a

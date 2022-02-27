@@ -33,12 +33,16 @@ const Location = () => {
   );
 
   return (
-    <section className="flex flex-col opacity-0 animate-fadeIn [animation-delay:5000ms]">
+    <section className="flex flex-col opacity-0 animate-fadeIn [animation-delay:5000ms] md:flex-row">
       <div className="flex items-center mb-1">
-        <span className="text-zinc-400 text-xs mr-2">{currentTime}</span>
-        <span className="text-zinc-50 text-xs mr-2">{CURRENT_LOCATION}</span>
+        <span className="text-zinc-400 text-xs mr-2 md:mr-6">
+          {currentTime}
+        </span>
+        <span className="text-zinc-50 text-xs mr-2 md:mr-6">
+          {CURRENT_LOCATION}
+        </span>
       </div>
-      <span className="text-zinc-300 text-xs mt-1 mr-2 text-right">
+      <span className="text-zinc-300 text-xs mt-1 mr-2 text-right md:mt-0">
         {tempInCelsius}/{tempInFahrenheit}
       </span>
     </section>
