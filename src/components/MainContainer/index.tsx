@@ -1,8 +1,8 @@
-import { SALUTATIONS } from "../../constants/salutations";
-import Greeting from "../Common/Greeting";
-import Info from "./Info";
-import Projects from "./Projects";
-import Work from "./Work";
+import { SALUTATIONS } from "@constants/salutations";
+import Greeting from "@components/Common/Greeting";
+import Info from "@components/MainContainer/Info";
+import Projects from "@components/MainContainer/Projects";
+import Work from "@components/MainContainer/Work";
 
 const MainContainer = () => {
   const salutation =
