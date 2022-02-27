@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { work } from "../../../data/work";
+import { work } from "@data/work";
 
 const Work = () => {
   return (
