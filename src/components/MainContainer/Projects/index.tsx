@@ -1,7 +1,7 @@
-import { projects } from "../../../data/projects";
-import Tag from "../../Common/Tag";
-import GithubIcon from "../../../svg/github.svg";
-import TooltipProvider from "../../../components/Common/Tooltip";
+import { projects } from "@data/projects";
+import Tag from "@components/Common/Tag";
+import GithubIcon from "@svg/github.svg";
+import TooltipProvider from "@components/Common/Tooltip";
 
 const Projects = () => {
   return (
