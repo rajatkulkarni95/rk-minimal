@@ -1,5 +1,5 @@
 import { SALUTATIONS } from "@constants/salutations";
-import Greeting from "@components/Common/Greeting";
+import Greeting from "@components/Greeting";
 import Info from "@components/MainContainer/Info";
 import Projects from "@components/MainContainer/Projects";
 import Work from "@components/MainContainer/Work";
