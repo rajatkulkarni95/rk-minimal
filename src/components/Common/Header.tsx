@@ -7,7 +7,7 @@ const Header = () => {
   const isMobile = (windowSize?.width ?? 641) < 640;
 
   return (
-    <header className="h-20 w-full flex justify-between items-center py-2 px-4 md:px-12 md:py-4">
+    <header className="w-full flex justify-between items-center py-2 px-4 md:px-12 md:pt-4 lg:pt-8">
       <div className="h-16 w-16">
         <Circle depth={4} bottom={0} />
         <Circle depth={3} bottom={56} innerClass={2} />
