@@ -18,8 +18,8 @@ export const defaultSEO = {
     ],
   },
   twitter: {
-    handle: "@JokingTwitter",
-    site: "@JokingTwitter",
+    handle: "@JokingRajat",
+    site: "@JokingRajat",
     cardType: "summary_large_image",
   },
 };
