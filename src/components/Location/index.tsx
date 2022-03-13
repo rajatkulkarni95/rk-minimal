@@ -33,7 +33,7 @@ const Location = () => {
   );
 
   return (
-    <section className="flex flex-col opacity-0 animate-fadeIn [animation-delay:5000ms] md:flex-row md:ml-16">
+    <section className="flex flex-col md:flex-row md:ml-16">
       <div className="flex items-center mb-1">
         <span className="text-zinc-400 text-xs mr-2 md:mr-6">
           {currentTime}
