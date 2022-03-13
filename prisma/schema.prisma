@@ -9,7 +9,7 @@ generator client {
 datasource db {
   provider             = "mysql"
   url                  = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
@@ -17,7 +17,7 @@ model Bookmark {
   uuid        String          @id @default(cuid())
   title       String?
   image       String?
-  url         String
+  url         String          @unique
   description String?
   tag         TagOnBookmark[]
   faviconUrl  String?
@@ -28,7 +28,7 @@ model Bookmark {
 
 model Tag {
   uuid       String          @id @default(cuid())
-  name       String
+  name       String          @unique
   background String
   border     String
   color      String
