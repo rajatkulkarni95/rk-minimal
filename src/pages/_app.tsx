@@ -1,14 +1,10 @@
 import type { AppProps } from "next/app";
-import Footer from "@components/Common/Footer";
-import Header from "@components/Common/Header";
 import "@styles/globals.css";
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <main className="bg-zinc-900 relative flex flex-col h-full min-h-screen w-full">
-      <Header />
+    <main className="relative flex h-full min-h-screen w-full flex-col bg-zinc-900">
       <Component {...pageProps} />
-      <Footer />
     </main>
   );
 }
