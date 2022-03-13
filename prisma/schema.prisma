@@ -9,17 +9,20 @@ generator client {
 datasource db {
   provider             = "mysql"
   url                  = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
 model Bookmark {
-  uuid      String          @id @default(cuid())
-  title     String
-  url       String
-  tag       TagOnBookmark[]
-  ogImage   String?
-  createdOn DateTime        @default(now())
-  updatedOn DateTime        @default(now())
+  uuid        String          @id @default(cuid())
+  title       String?
+  image       String?
+  url         String
+  description String?
+  tag         TagOnBookmark[]
+  faviconUrl  String?
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
 
 }
 
@@ -30,8 +33,8 @@ model Tag {
   border     String
   color      String
   bookmarks  TagOnBookmark[]
-  createdOn  DateTime        @default(now())
-  updatedOn  DateTime        @default(now())
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
 }
 
 model TagOnBookmark {
