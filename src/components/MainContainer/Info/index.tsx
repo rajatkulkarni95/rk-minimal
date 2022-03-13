@@ -1,6 +1,6 @@
 const Info = () => {
   return (
-    <section className="flex flex-col mt-6 md:flex-row md:items-baseline opacity-0 animate-fadeIn [animation-delay:2500ms]">
+    <section className="flex flex-col mt-6 md:flex-row md:items-baseline opacity-0 animate-fadeIn [animation-delay:1500ms]">
       <span className="text-[11px] text-blue-300 uppercase md:w-24 md:text-right">
         Info
       </span>

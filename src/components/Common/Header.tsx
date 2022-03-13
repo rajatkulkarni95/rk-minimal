@@ -15,7 +15,11 @@ const Header = () => {
         <Circle depth={1} bottom={120} innerClass={4} />
         <Circle depth={0.25} bottom={130} innerClass={5} />
       </div>
-      {isMobile && <Location />}
+      {isMobile && (
+        <div className="opacity-0 animate-fadeIn [animation-delay:1500ms]">
+          <Location />
+        </div>
+      )}
     </header>
   );
 };

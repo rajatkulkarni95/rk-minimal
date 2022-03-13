@@ -35,7 +35,7 @@ module.exports = {
             },
             animation: {
                 fadeIn: "fadeIn 1s ease-in forwards",
-                blinking: "blinking 0.75s cubic-bezier(0.4, 0, 0.6, 1) 4",
+                blinking: "blinking 0.75s cubic-bezier(0.4, 0, 0.6, 1) 3",
                 slideDownAndFade: "slideDownAndFade 0.5s ease forwards",
             },
         },

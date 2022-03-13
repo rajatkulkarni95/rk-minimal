@@ -46,22 +46,22 @@ html {
     height: inherit;
     transform-origin: 50% 0;
     background: #181818;
-    animation: revealCircle 1s linear forwards;
-    animation-delay: 2500ms;
+    animation: revealCircle 0.75s linear forwards;
+    animation-delay: 1500ms;
 }
 
 .circle .cover.inner-2 {
-    animation-delay: 3500ms;
+    animation-delay: 2000ms;
 }
 
 .circle .cover.inner-3 {
-    animation-delay: 4500ms;
+    animation-delay: 2500ms;
 }
 
 .circle .cover.inner-4 {
-    animation-delay: 5500ms;
+    animation-delay: 3000ms;
 }
 
 .circle .cover.inner-5 {
-    animation-delay: 6500ms;
+    animation-delay: 3500ms;
 }
