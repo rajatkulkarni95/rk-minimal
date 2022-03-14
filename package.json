@@ -6,7 +6,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "db:dev": "pscale connect rajatkulkarni main --port 3310"
+        "migrate:dev": "npx prisma migrate dev"
     },
     "dependencies": {
         "@radix-ui/react-tooltip": "^0.1.7",
