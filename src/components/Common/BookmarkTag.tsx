@@ -15,7 +15,7 @@ export const BookmarkTag = ({
 }: IBookmarkTag) => {
   return (
     <span
-      className="w-20 py-1 rounded-2xl border font-light text-[10px] uppercase text-center lg:font-normal lg:text-xs lg:w-24"
+      className="w-20 h-5 flex items-center justify-center py-1 rounded-2xl border font-normal text-[11px] uppercase text-center lg:text-xs lg:w-24 lg:h-6"
       style={{ background, borderColor: border, color }}
     >
       {name}

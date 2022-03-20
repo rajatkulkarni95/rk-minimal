@@ -12,12 +12,17 @@ export const BookmarkItem = ({ title, url, tag }: IBookmarkItem) => {
     <div className="flex-col mb-4">
       <div className="flex justify-between">
         <a
-          className="text-sm text-gray-50 font-normal"
+          className="inline-block max-w-[220px] flex flex-col lg:max-w-md"
           href={url}
           target="_blank"
           rel="noreferrer"
         >
-          {title}
+          <p className="text-sm text-gray-50 font-normal hover:text-green-500 lg:text-base">
+            {title}
+          </p>
+          <p className="text-xs text-gray-400 font-light hover:underline lg:text-sm">
+            {url}
+          </p>
         </a>
         <BookmarkTag
           background={tag?.background}
@@ -26,14 +31,6 @@ export const BookmarkItem = ({ title, url, tag }: IBookmarkItem) => {
           name={tag?.name}
         />
       </div>
-      <a
-        className="text-xs text-gray-300 font-light inline-block w-64"
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {url}
-      </a>
     </div>
   );
 };
