@@ -21,7 +21,8 @@
       "@svg/*": ["./src/svg/*"],
       "@data/*": ["./src/data/*"],
       "@constants/*": ["./src/constants/*"],
-      "@config/*": ["./src/config/*"]
+      "@config/*": ["./src/config/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   },
   "include": [
@@ -32,5 +33,11 @@
     "**/*.tsx",
     "next.config.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
 }
