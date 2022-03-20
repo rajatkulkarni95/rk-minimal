@@ -32,6 +32,7 @@ export interface NexusGenObjects {
     description?: string | null; // String
     faviconUrl?: string | null; // String
     image?: string | null; // String
+    tagUuid?: string | null; // String
     title: string; // String!
     url: string; // String!
     uuid: string; // String!
@@ -62,14 +63,19 @@ export interface NexusGenFieldTypes {
     description: string | null; // String
     faviconUrl: string | null; // String
     image: string | null; // String
+    tag: NexusGenRootTypes['Tag'] | null; // Tag
+    tagUuid: string | null; // String
     title: string; // String!
     url: string; // String!
     uuid: string; // String!
   }
   Mutation: { // field return type
+    createBookmark: NexusGenRootTypes['Bookmark']; // Bookmark!
     createTag: NexusGenRootTypes['Tag']; // Tag!
   }
   Query: { // field return type
+    bookmark: NexusGenRootTypes['Bookmark'] | null; // Bookmark
+    bookmarks: Array<NexusGenRootTypes['Bookmark'] | null> | null; // [Bookmark]
     tag: NexusGenRootTypes['Tag'] | null; // Tag
     tags: NexusGenRootTypes['Tag'][]; // [Tag!]!
   }
@@ -88,14 +94,19 @@ export interface NexusGenFieldTypeNames {
     description: 'String'
     faviconUrl: 'String'
     image: 'String'
+    tag: 'Tag'
+    tagUuid: 'String'
     title: 'String'
     url: 'String'
     uuid: 'String'
   }
   Mutation: { // field return type name
+    createBookmark: 'Bookmark'
     createTag: 'Tag'
   }
   Query: { // field return type name
+    bookmark: 'Bookmark'
+    bookmarks: 'Bookmark'
     tag: 'Tag'
     tags: 'Tag'
   }
@@ -111,6 +122,12 @@ export interface NexusGenFieldTypeNames {
 
 export interface NexusGenArgTypes {
   Mutation: {
+    createBookmark: { // args
+      description?: string | null; // String
+      tagUuid: string; // String!
+      title: string; // String!
+      url: string; // String!
+    }
     createTag: { // args
       background: string; // String!
       border: string; // String!
@@ -119,6 +136,9 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
+    bookmark: { // args
+      id: string; // String!
+    }
     tag: { // args
       id: string; // String!
     }

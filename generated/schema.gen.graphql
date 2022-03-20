@@ -6,16 +6,21 @@ type Bookmark {
   description: String
   faviconUrl: String
   image: String
+  tag: Tag
+  tagUuid: String
   title: String!
   url: String!
   uuid: String!
 }
 
 type Mutation {
+  createBookmark(description: String, tagUuid: String!, title: String!, url: String!): Bookmark!
   createTag(background: String!, border: String!, color: String!, name: String!): Tag!
 }
 
 type Query {
+  bookmark(id: String!): Bookmark
+  bookmarks: [Bookmark]
   tag(id: String!): Tag
   tags: [Tag!]!
 }
@@ -24,11 +29,7 @@ type Tag {
   background: String!
   bookmarks: [Bookmark]
   border: String!
-
-  """Text color"""
   color: String!
-
-  """Tag Name"""
   name: String!
   uuid: String!
 }

@@ -4,10 +4,10 @@ export const Tag = objectType({
   name: "Tag",
   definition(t) {
     t.nonNull.string("uuid");
-    t.nonNull.string("name", { description: "Tag Name" });
+    t.nonNull.string("name");
     t.nonNull.string("background");
     t.nonNull.string("border");
-    t.nonNull.string("color", { description: "Text color" });
+    t.nonNull.string("color");
     t.list.field("bookmarks", {
       type: "Bookmark",
       resolve: (_parent, args, ctx) => {
