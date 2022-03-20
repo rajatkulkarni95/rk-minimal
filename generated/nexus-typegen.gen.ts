@@ -28,14 +28,22 @@ export interface NexusGenScalars {
 }
 
 export interface NexusGenObjects {
+  Bookmark: { // root type
+    description?: string | null; // String
+    faviconUrl?: string | null; // String
+    image?: string | null; // String
+    title: string; // String!
+    url: string; // String!
+    uuid: string; // String!
+  }
   Mutation: {};
   Query: {};
   Tag: { // root type
-    background?: string | null; // String
-    border?: string | null; // String
-    color?: string | null; // String
-    name?: string | null; // String
-    uuid?: string | null; // ID
+    background: string; // String!
+    border: string; // String!
+    color: string; // String!
+    name: string; // String!
+    uuid: string; // String!
   }
 }
 
@@ -50,26 +58,44 @@ export type NexusGenRootTypes = NexusGenObjects
 export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
+  Bookmark: { // field return type
+    description: string | null; // String
+    faviconUrl: string | null; // String
+    image: string | null; // String
+    title: string; // String!
+    url: string; // String!
+    uuid: string; // String!
+  }
   Mutation: { // field return type
     createTag: NexusGenRootTypes['Tag']; // Tag!
   }
   Query: { // field return type
+    tag: NexusGenRootTypes['Tag'] | null; // Tag
     tags: NexusGenRootTypes['Tag'][]; // [Tag!]!
   }
   Tag: { // field return type
-    background: string | null; // String
-    border: string | null; // String
-    color: string | null; // String
-    name: string | null; // String
-    uuid: string | null; // ID
+    background: string; // String!
+    border: string; // String!
+    color: string; // String!
+    name: string; // String!
+    uuid: string; // String!
   }
 }
 
 export interface NexusGenFieldTypeNames {
+  Bookmark: { // field return type name
+    description: 'String'
+    faviconUrl: 'String'
+    image: 'String'
+    title: 'String'
+    url: 'String'
+    uuid: 'String'
+  }
   Mutation: { // field return type name
     createTag: 'Tag'
   }
   Query: { // field return type name
+    tag: 'Tag'
     tags: 'Tag'
   }
   Tag: { // field return type name
@@ -77,7 +103,7 @@ export interface NexusGenFieldTypeNames {
     border: 'String'
     color: 'String'
     name: 'String'
-    uuid: 'ID'
+    uuid: 'String'
   }
 }
 
@@ -88,6 +114,11 @@ export interface NexusGenArgTypes {
       border: string; // String!
       color: string; // String!
       name: string; // String!
+    }
+  }
+  Query: {
+    tag: { // args
+      id: string; // String!
     }
   }
 }
