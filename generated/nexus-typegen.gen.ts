@@ -75,6 +75,7 @@ export interface NexusGenFieldTypes {
   }
   Tag: { // field return type
     background: string; // String!
+    bookmarks: Array<NexusGenRootTypes['Bookmark'] | null> | null; // [Bookmark]
     border: string; // String!
     color: string; // String!
     name: string; // String!
@@ -100,6 +101,7 @@ export interface NexusGenFieldTypeNames {
   }
   Tag: { // field return type name
     background: 'String'
+    bookmarks: 'Bookmark'
     border: 'String'
     color: 'String'
     name: 'String'

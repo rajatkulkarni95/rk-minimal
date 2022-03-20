@@ -1,14 +1,25 @@
-import { prisma } from "../../lib/prisma";
 import { extendType, nonNull, objectType, stringArg } from "nexus";
 
 export const Tag = objectType({
   name: "Tag",
   definition(t) {
-    t.id("uuid");
-    t.string("name");
-    t.string("background");
-    t.string("border");
-    t.string("color");
+    t.nonNull.string("uuid");
+    t.nonNull.string("name", { description: "Tag Name" });
+    t.nonNull.string("background");
+    t.nonNull.string("border");
+    t.nonNull.string("color", { description: "Text color" });
+    t.list.field("bookmarks", {
+      type: "Bookmark",
+      resolve: (_parent, args, ctx) => {
+        return ctx.prisma.bookmark.findMany({
+          where: {
+            tagUuid: {
+              equals: _parent.uuid,
+            },
+          },
+        });
+      },
+    });
   },
 });
 
@@ -18,8 +29,22 @@ export const TagsQuery = extendType({
   definition(t) {
     t.nonNull.list.nonNull.field("tags", {
       type: "Tag",
-      resolve: (_parent, _args, context, info) => {
-        return prisma.tag.findMany();
+      resolve: (_parent, _args, ctx) => {
+        return ctx.prisma.tag.findMany();
+      },
+    });
+
+    t.field("tag", {
+      type: "Tag",
+      args: {
+        id: nonNull(stringArg()),
+      },
+      resolve: (parent, args, ctx) => {
+        return ctx.prisma.tag.findUnique({
+          where: {
+            uuid: args.id,
+          },
+        });
       },
     });
   },
@@ -37,7 +62,7 @@ export const CreateTagMutation = extendType({
         border: nonNull(stringArg()),
         color: nonNull(stringArg()),
       },
-      async resolve(_parent, args, context) {
+      async resolve(_parent, args, ctx) {
         const newTag = {
           name: args.name,
           background: args.background,
@@ -45,7 +70,7 @@ export const CreateTagMutation = extendType({
           color: args.color,
         };
 
-        return await context.prisma.tag.create({
+        return await ctx.prisma.tag.create({
           data: newTag,
         });
       },
