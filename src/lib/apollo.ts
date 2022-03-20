@@ -4,7 +4,7 @@ import {
   NormalizedCacheObject,
 } from "@apollo/client";
 import { useMemo } from "react";
-import { NextApiRequest, NextApiResponse, NextPage } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 
 export interface GraphQlContext {
   req: NextApiRequest;
@@ -19,7 +19,7 @@ function createIsomorphicLink(context: GraphQlContext | undefined) {
    */
   if (typeof window === "undefined") {
     const { SchemaLink } = require("@apollo/client/link/schema");
-    const { schema } = require("../graphql/schema");
+    const { schema } = require("../graphql/schema.ts");
     return new SchemaLink({ schema: schema, context });
   }
 

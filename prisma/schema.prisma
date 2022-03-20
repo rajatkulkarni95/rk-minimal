@@ -19,7 +19,7 @@ model Bookmark {
   image       String?
   url         String   @unique
   description String?
-  tag         Tag     @relation(fields: [tagUuid], references: [uuid])
+  tag         Tag      @relation(fields: [tagUuid], references: [uuid])
   tagUuid     String
   faviconUrl  String?
   createdAt   DateTime @default(now())
