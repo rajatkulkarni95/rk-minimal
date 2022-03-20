@@ -26,7 +26,6 @@ function createIsomorphicLink(context: GraphQlContext | undefined) {
   /**
    * Client-side
    */
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { HttpLink } = require("@apollo/client");
   return new HttpLink({
     uri: "/api/graphql",
@@ -34,7 +33,6 @@ function createIsomorphicLink(context: GraphQlContext | undefined) {
   });
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function createApolloClient(context?: GraphQlContext): ApolloClient<any> {
   return new ApolloClient({
     /**

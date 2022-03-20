@@ -28,6 +28,7 @@ const Bookmarks: NextPage = () => {
       <section className="flex flex-col lg:flex-row">
         {data?.bookmarks.map((bookmark) => (
           <BookmarkItem
+            key={bookmark.uuid}
             title={bookmark.title}
             url={bookmark.url}
             tag={bookmark.tag}
