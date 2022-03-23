@@ -4,18 +4,19 @@ import { Container } from "@components/Common/Container";
 import { NexusGenFieldTypes } from "generated/nexus-typegen.gen";
 import { NextPage } from "next";
 import { GET_ALL_BOOKMARKS } from "src/graphql/queries/bookmarks";
+import { TPageProps } from "src/types";
 
 interface GetBookmarks {
   bookmarks: NexusGenFieldTypes["Bookmark"][];
 }
 
-const Bookmarks: NextPage = () => {
+const Bookmarks: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
   const { data, loading } = useQuery<GetBookmarks>(GET_ALL_BOOKMARKS);
   if (loading)
     return <p className="text-xs font-light text-gray-400 m-4">Loading...</p>;
 
   return (
-    <Container>
+    <Container isSidebarOpen={isSidebarOpen}>
       <h3 className="text-lg uppercase text-gray-100 lg:text-2xl">Bookmarks</h3>
       <p className="mt-1 text-xs font-light text-gray-400 lg:text-base">
         Things found on the interwebs that needed to be saved

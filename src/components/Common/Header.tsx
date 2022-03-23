@@ -5,15 +5,18 @@ import useWindowSize from "src/hooks/useWindowSize";
 import { Size } from "src/types";
 import Sidebar from "./Sidebar";
 
-const Header = () => {
-  const windowSize: Size = useWindowSize();
-  const isMobile = (windowSize?.width ?? 641) < 640;
+type THeaderProps = {
+  isSidebarOpen: boolean;
+  handleSidebarOpen: (handleState: boolean) => void;
+};
 
-  const [showSidebar, setShowSidebar] = useState(false);
+const Header = ({ isSidebarOpen, handleSidebarOpen }: THeaderProps) => {
+  const windowSize: Size = useWindowSize();
+  const isMobile = (windowSize?.width ?? 721) < 720;
 
   return (
     <Fragment>
-      <header className="w-full flex justify-between items-center py-2 px-4 md:px-12 md:pt-4 lg:pt-8">
+      <header className="w-full flex justify-between items-center py-2 px-4 sm:px-8 sm:pt-4 md:px-12 md:pt-4 lg:pt-8">
         <div className="h-16 w-16">
           <Circle depth={4} bottom={0} />
           <Circle depth={3} bottom={56} innerClass={2} />
@@ -28,14 +31,16 @@ const Header = () => {
           {isMobile && (
             <button
               className="p-2 bg-zinc-800 rounded-md flex hover:bg-zinc-700"
-              onClick={() => setShowSidebar(true)}
+              onClick={() => handleSidebarOpen(true)}
             >
               <HamburgerIcon />
             </button>
           )}
         </section>
       </header>
-      {showSidebar && <Sidebar hideSidebar={() => setShowSidebar(false)} />}
+      {isSidebarOpen && (
+        <Sidebar hideSidebar={() => handleSidebarOpen(false)} />
+      )}
     </Fragment>
   );
 };
