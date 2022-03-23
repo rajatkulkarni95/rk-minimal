@@ -12,7 +12,7 @@ type THeaderProps = {
 
 const Header = ({ isSidebarOpen, handleSidebarOpen }: THeaderProps) => {
   const windowSize: Size = useWindowSize();
-  const isMobile = (windowSize?.width ?? 721) < 720;
+  const isMobile = (windowSize?.width ?? 1026) < 1025;
 
   return (
     <Fragment>
@@ -25,7 +25,7 @@ const Header = ({ isSidebarOpen, handleSidebarOpen }: THeaderProps) => {
           <Circle depth={0.25} bottom={130} innerClass={5} />
         </div>
         <section className="flex items-baseline">
-          <div className="opacity-0 mr-2 animate-fadeIn [animation-delay:1500ms] md:mr-0">
+          <div className="opacity-0 mr-2 animate-fadeIn [animation-delay:1500ms] md:mr-3 lg:mr-0">
             <Location />
           </div>
           {isMobile && (
