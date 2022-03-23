@@ -15,7 +15,7 @@ const Sidebar = ({ hideSidebar, showSidebar }: TProps) => {
   return (
     <div
       ref={sidebarRef}
-      className="w-[280px] h-screen bg-zinc-900 z-10 absolute border-l overflow-hidden border-zinc-700 animate-slideOut"
+      className="w-[280px] h-full bg-zinc-900 z-10 absolute border-l overflow-hidden border-zinc-700 animate-slideOut"
     >
       <section className="p-4 flex justify-end">
         <button

@@ -34,7 +34,7 @@ module.exports = {
         },
         slideOut: {
           "0%": {
-            right: "-720px",
+            right: "-280px",
           },
           "100%": {
             right: "0px",
