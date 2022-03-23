@@ -1,5 +1,5 @@
-import fetcher from "@components/helpers/fetcher";
-import { convertFromKelvin } from "@components/helpers/weather";
+import fetcher from "src/helpers/fetcher";
+import { convertFromKelvin } from "src/helpers/weather";
 import {
   COORDINATES,
   CURRENT_LOCATION,

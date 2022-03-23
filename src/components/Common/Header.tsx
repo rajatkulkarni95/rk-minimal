@@ -1,6 +1,11 @@
 import Location from "@components/Location";
+import HamburgerIcon from "@svg/hamburger.svg";
+import useWindowSize from "src/hooks/useWindowSize";
+import { Size } from "src/types";
 
 const Header = () => {
+  const windowSize: Size = useWindowSize();
+  const isMobile = (windowSize?.width ?? 641) < 640;
   return (
     <header className="w-full flex justify-between items-center py-2 px-4 md:px-12 md:pt-4 lg:pt-8">
       <div className="h-16 w-16">
@@ -10,9 +15,16 @@ const Header = () => {
         <Circle depth={1} bottom={120} innerClass={4} />
         <Circle depth={0.25} bottom={130} innerClass={5} />
       </div>
-      <div className="opacity-0 animate-fadeIn [animation-delay:1500ms]">
-        <Location />
-      </div>
+      <section className="flex items-baseline">
+        <div className="opacity-0 mr-2 animate-fadeIn [animation-delay:1500ms] md:mr-0">
+          <Location />
+        </div>
+        {isMobile && (
+          <button className="p-2 bg-zinc-800 rounded-md flex hover:bg-zinc-700">
+            <HamburgerIcon />
+          </button>
+        )}
+      </section>
     </header>
   );
 };
