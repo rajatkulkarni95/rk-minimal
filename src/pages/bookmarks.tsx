@@ -14,7 +14,7 @@ const Bookmarks: NextPage = () => {
     return <p className="text-xs font-light text-gray-400 m-4">Loading...</p>;
 
   return (
-    <main className="w-full h-full px-4 pb-4 mx-auto md:w-3/4 md:mt-0 md:pb-10 lg:pb-16 lg:w-[720px] lg:h-[800px] xl:my-auto">
+    <main className="w-full h-full px-4 pb-4 mx-auto md:w-3/4 md:mt-0 md:pb-10 lg:pb-16 lg:w-[720px] lg:h-[720px] xl:my-auto">
       <h3 className="text-lg uppercase text-gray-100 lg:text-2xl">Bookmarks</h3>
       <p className="mt-1 text-xs font-light text-gray-400 lg:text-base">
         Things found on the interwebs that needed to be saved
