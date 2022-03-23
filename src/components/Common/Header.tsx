@@ -1,11 +1,6 @@
 import Location from "@components/Location";
-import useWindowSize from "src/hooks/useWindowSize";
-import { Size } from "src/types";
 
 const Header = () => {
-  const windowSize: Size = useWindowSize();
-  const isMobile = (windowSize?.width ?? 641) < 640;
-
   return (
     <header className="w-full flex justify-between items-center py-2 px-4 md:px-12 md:pt-4 lg:pt-8">
       <div className="h-16 w-16">
@@ -15,11 +10,9 @@ const Header = () => {
         <Circle depth={1} bottom={120} innerClass={4} />
         <Circle depth={0.25} bottom={130} innerClass={5} />
       </div>
-      {isMobile && (
-        <div className="opacity-0 animate-fadeIn [animation-delay:1500ms]">
-          <Location />
-        </div>
-      )}
+      <div className="opacity-0 animate-fadeIn [animation-delay:1500ms]">
+        <Location />
+      </div>
     </header>
   );
 };

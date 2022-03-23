@@ -33,16 +33,12 @@ const Location = () => {
   );
 
   return (
-    <section className="flex flex-col md:flex-row md:ml-16">
+    <section className="flex flex-col md:ml-16">
       <div className="flex items-center mb-1">
-        <span className="text-zinc-400 text-xs mr-2 md:mr-6">
-          {currentTime}
-        </span>
-        <span className="text-zinc-50 text-xs mr-2 md:mr-6">
-          {CURRENT_LOCATION}
-        </span>
+        <span className="text-zinc-400 text-xs mr-2">{currentTime}</span>
+        <span className="text-zinc-50 text-xs mr-2">{CURRENT_LOCATION}</span>
       </div>
-      <span className="text-zinc-300 text-xs mt-1 mr-2 text-right md:mt-0">
+      <span className="text-zinc-300 text-xs mt-1 mr-2 text-right">
         {tempInCelsius}/{tempInFahrenheit}
       </span>
     </section>
