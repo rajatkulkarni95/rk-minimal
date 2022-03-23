@@ -17,14 +17,21 @@ const Projects = () => {
             </span>
             <div key={project.id} className="flex flex-col my-2 w-full">
               <div className="flex justify-between items-center">
-                <a
-                  href={project.site}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm"
-                >
-                  {project.title}
-                </a>
+                <p className="flex items-baseline">
+                  <a
+                    href={project.site}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm border-b border-transparent pt-1 pb-[3px] hover:border-b-gray-600"
+                  >
+                    {project.title}{" "}
+                  </a>
+                  {project.wip && (
+                    <span className="bg-yellow-500 bg-opacity-25 text-yellow-300 py-[2px] px-2 rounded ml-3 text-[11px]">
+                      WIP
+                    </span>
+                  )}
+                </p>
                 <TooltipProvider tooltip="View Code">
                   <a href={project.code} target="_blank" rel="noreferrer">
                     <GithubIcon height={16} width={16} />
