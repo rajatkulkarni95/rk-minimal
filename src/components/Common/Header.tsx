@@ -39,7 +39,10 @@ const Header = ({ isSidebarOpen, handleSidebarOpen }: THeaderProps) => {
         </section>
       </header>
       {isSidebarOpen && (
-        <Sidebar hideSidebar={() => handleSidebarOpen(false)} />
+        <Sidebar
+          hideSidebar={() => handleSidebarOpen(false)}
+          showSidebar={isSidebarOpen}
+        />
       )}
     </Fragment>
   );
