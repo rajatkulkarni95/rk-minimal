@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
-import { BookmarkItem } from "@components/Common/BookmarkItem";
+import { BookmarkItem } from "@components/Bookmarks/Item";
+import { Container } from "@components/Common/Container";
 import { NexusGenFieldTypes } from "generated/nexus-typegen.gen";
 import { NextPage } from "next";
 import { GET_ALL_BOOKMARKS } from "src/graphql/queries/bookmarks";
@@ -14,7 +15,7 @@ const Bookmarks: NextPage = () => {
     return <p className="text-xs font-light text-gray-400 m-4">Loading...</p>;
 
   return (
-    <main className="w-full h-full px-4 pb-4 mx-auto md:w-3/4 md:mt-0 md:pb-10 lg:pb-16 lg:w-[720px] lg:h-[720px] xl:my-auto">
+    <Container>
       <h3 className="text-lg uppercase text-gray-100 lg:text-2xl">Bookmarks</h3>
       <p className="mt-1 text-xs font-light text-gray-400 lg:text-base">
         Things found on the interwebs that needed to be saved
@@ -35,7 +36,7 @@ const Bookmarks: NextPage = () => {
           />
         ))}
       </section>
-    </main>
+    </Container>
   );
 };
 

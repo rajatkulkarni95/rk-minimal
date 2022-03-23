@@ -1,7 +1,7 @@
 import { projects } from "@data/projects";
-import Tag from "@components/Common/Tag";
 import GithubIcon from "@svg/github.svg";
 import TooltipProvider from "@components/Common/Tooltip";
+import TextTag from "@components/Common/TextTag";
 
 const Projects = () => {
   return (
@@ -43,7 +43,7 @@ const Projects = () => {
               </p>
               <section className="flex items-center mt-2">
                 {project.meta.map((tech) => (
-                  <Tag text={tech} key={tech} />
+                  <TextTag text={tech} key={tech} />
                 ))}
               </section>
             </div>
