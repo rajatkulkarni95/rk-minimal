@@ -15,11 +15,9 @@ const Sidebar = ({ hideSidebar, showSidebar }: TProps) => {
   return (
     <aside
       ref={sidebarRef}
-      className={`${
-        showSidebar
-          ? "absolute inset-y-0 right-0 translate-x-0 shadow-lg"
-          : "absolute right-0 translate-x-full"
-      } w-[280px] z-30 flex h-full bg-zinc-900 flex-none transform flex-col overflow-y-auto border-l border-zinc-700 transition duration-200 ease-in-out`}
+      className={`w-[280px] z-30 fixed right-0 top-0 flex h-full bg-zinc-900 flex-none transform flex-col overflow-y-auto border-l border-zinc-700 transition duration-200 ease-in-out  ${
+        showSidebar ? "translate-x-0 " : "translate-x-full"
+      }`}
     >
       <section className="p-4 flex justify-end">
         <button
