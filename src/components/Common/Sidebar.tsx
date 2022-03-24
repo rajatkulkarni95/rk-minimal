@@ -1,6 +1,7 @@
 import CloseIcon from "@svg/close.svg";
 import { useRef } from "react";
 import useOnClickOutside from "src/hooks/useOnClickOutside";
+import { InternalLink } from "./LinkButton";
 
 type TProps = {
   hideSidebar: () => void;
@@ -26,6 +27,15 @@ const Sidebar = ({ hideSidebar, showSidebar }: TProps) => {
         >
           <CloseIcon />
         </button>
+      </section>
+
+      <section className="mt-8 px-4 w-full">
+        <InternalLink href="/" text="Home" onClick={hideSidebar} />
+        <InternalLink
+          href="/bookmarks"
+          text="Bookmarks"
+          onClick={hideSidebar}
+        />
       </section>
     </aside>
   );
