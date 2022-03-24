@@ -1,5 +1,5 @@
 import { NexusGenFieldTypes } from "generated/nexus-typegen.gen";
-import { BookmarkTag } from "./BookmarkTag";
+import { BookmarkTag } from "./Tag";
 
 interface IBookmarkItem {
   title: string;

@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 
 export const useCurrentTime = () => {
   const [currentTime, setCurrentTime] = useState<string>();
-
+  const date = new Date();
   useEffect(() => {
-    const date = new Date();
     const getCurrentTime = date.getTime();
     const getCurrentTimezoneOffset = date.getTimezoneOffset();
 
@@ -18,5 +17,9 @@ export const useCurrentTime = () => {
     setCurrentTime(displayTime);
   }, []);
 
-  return { currentTime };
+  const currentDay = new Intl.DateTimeFormat("en-US", {
+    weekday: "short",
+  }).format(date);
+
+  return { currentTime, currentDay };
 };

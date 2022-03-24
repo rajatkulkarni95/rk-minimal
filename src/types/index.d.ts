@@ -13,3 +13,7 @@ export type TWeather = {
     }
   ];
 };
+
+export type TPageProps = {
+  isSidebarOpen: boolean;
+};
