@@ -13,9 +13,13 @@ const Sidebar = ({ hideSidebar, showSidebar }: TProps) => {
   useOnClickOutside(sidebarRef, hideSidebar);
 
   return (
-    <div
+    <aside
       ref={sidebarRef}
-      className="w-[280px] h-full bg-zinc-900 z-10 absolute border-l overflow-hidden border-zinc-700 animate-slideOut"
+      className={`${
+        showSidebar
+          ? "absolute inset-y-0 right-0 translate-x-0 shadow-lg"
+          : "absolute right-0 translate-x-full"
+      } w-[280px] z-30 flex h-full bg-zinc-900 flex-none transform flex-col overflow-y-auto border-l border-zinc-700 transition duration-200 ease-in-out`}
     >
       <section className="p-4 flex justify-end">
         <button
@@ -25,7 +29,7 @@ const Sidebar = ({ hideSidebar, showSidebar }: TProps) => {
           <CloseIcon />
         </button>
       </section>
-    </div>
+    </aside>
   );
 };
 

@@ -32,20 +32,11 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
-        slideOut: {
-          "0%": {
-            right: "-280px",
-          },
-          "100%": {
-            right: "0px",
-          },
-        },
       },
       animation: {
         fadeIn: "fadeIn 1s ease-in forwards",
         blinking: "blinking 0.75s cubic-bezier(0.4, 0, 0.6, 1) 3",
         slideDownAndFade: "slideDownAndFade 0.5s ease forwards",
-        slideOut: "slideOut 0.5s ease forwards",
       },
     },
     fontFamily: {

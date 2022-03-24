@@ -1,16 +1,13 @@
 import Location from "@components/Location";
 import HamburgerIcon from "@svg/hamburger.svg";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import useWindowSize from "src/hooks/useWindowSize";
 import { Size } from "src/types";
-import Sidebar from "./Sidebar";
-
 type THeaderProps = {
-  isSidebarOpen: boolean;
   handleSidebarOpen: (handleState: boolean) => void;
 };
 
-const Header = ({ isSidebarOpen, handleSidebarOpen }: THeaderProps) => {
+const Header = ({ handleSidebarOpen }: THeaderProps) => {
   const windowSize: Size = useWindowSize();
   const isMobile = (windowSize?.width ?? 1026) < 1025;
 
@@ -38,12 +35,6 @@ const Header = ({ isSidebarOpen, handleSidebarOpen }: THeaderProps) => {
           )}
         </section>
       </header>
-      {isSidebarOpen && (
-        <Sidebar
-          hideSidebar={() => handleSidebarOpen(false)}
-          showSidebar={isSidebarOpen}
-        />
-      )}
     </Fragment>
   );
 };
