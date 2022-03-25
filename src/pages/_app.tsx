@@ -8,6 +8,7 @@ import Header from "@components/Common/Header";
 import { useApollo } from "@lib/apollo";
 import { useState } from "react";
 import Sidebar from "@components/Sidebar";
+import NavLinks from "@components/Common/NavLinks";
 
 function App({ Component, pageProps }: AppProps) {
   const apolloClient = useApollo(pageProps);
@@ -25,6 +26,7 @@ function App({ Component, pageProps }: AppProps) {
           hideSidebar={() => handleSidebarOpen(false)}
           showSidebar={showSidebar}
         />
+        <NavLinks />
         <Component {...pageProps} isSidebarOpen={showSidebar} />
         <Footer />
       </main>

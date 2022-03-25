@@ -60,16 +60,15 @@ export const InternalLink = ({ href, text, onClick }: TInternalLink) => {
   );
 };
 
-export const InternalHeaderLink = ({ href, text, onClick }: TInternalLink) => {
+export const InternalHeaderLink = ({ href, text }: TProps) => {
   const router = useRouter();
   const isCurrentPath = router.pathname === href;
 
   return (
     <Link href={href}>
       <button
-        onClick={onClick}
         className={`py-2 px-4 rounded-md text-sm text-left cursor-pointer bg-transparent 
-        w-fit ml-4 hover:bg-zinc-800 ${
+        w-fit mb-4 hover:bg-zinc-800 ${
           isCurrentPath ? "text-zinc-50" : "text-zinc-400"
         }`}
       >
