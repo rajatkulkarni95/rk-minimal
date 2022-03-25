@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 type TProps = {
   href: string;
@@ -9,6 +10,7 @@ type TInternalLink = {
   href: string;
   text: string;
   onClick: () => void;
+  classes?: string;
 };
 
 export const PrimaryLinkButton = ({ href, text }: TProps) => {
@@ -37,12 +39,21 @@ export const SecondaryLinkButton = ({ href, text }: TProps) => {
   );
 };
 
-export const InternalLink = ({ href, text, onClick }: TInternalLink) => {
+export const InternalLink = ({
+  href,
+  text,
+  onClick,
+  classes,
+}: TInternalLink) => {
+  const router = useRouter();
+  const isCurrentPath = router.pathname === href;
   return (
     <Link href={href}>
       <button
         onClick={onClick}
-        className="py-2 px-4 rounded-md text-sm text-left cursor-pointer bg-zinc-800 text-zinc-50 hover:bg-zinc-700 w-full mb-4"
+        className={`py-2 px-4 rounded-md text-sm text-left cursor-pointer bg-zinc-800 text-zinc-50 hover:bg-zinc-700 w-full mb-4 ${
+          isCurrentPath ? "bg-zinc-100 text-zinc-800" : ""
+        } ${classes}`}
       >
         {text}
       </button>

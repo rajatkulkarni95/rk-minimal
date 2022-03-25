@@ -1,6 +1,13 @@
 import { links } from "@data/links";
+import useWindowSize from "src/hooks/useWindowSize";
+import { Size } from "src/types";
 
 const Footer = () => {
+  const windowSize: Size = useWindowSize();
+  const isMobile = (windowSize?.width ?? 1026) < 1025;
+
+  if (isMobile) return null;
+
   return (
     <footer className="h-12 bg-zinc-900 shadow-md flex items-baseline py-2 px-6 sticky justify-center md:justify-between bottom-0 opacity-0 animate-fadeIn mt-auto [animation-delay:3000ms]">
       <aside>
