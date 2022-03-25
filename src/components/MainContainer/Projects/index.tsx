@@ -9,7 +9,7 @@ const Projects = () => {
       <span className="text-[11px] text-amber-300 uppercase md:text-right">
         Projects
       </span>
-      <section className="flex-col w-full md:ml-3">
+      <section className="flex-col w-full mt-2 md:ml-3">
         {projects.map((project) => (
           <section
             className="flex items-baseline flex-col md:flex-row"

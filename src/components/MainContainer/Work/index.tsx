@@ -10,13 +10,11 @@ const Work = () => {
       <section className="grid grid-cols-[160px_60px_100px] gap-x-4 gap-y-4 mt-2 md:ml-4 md:grid-cols-[225px_100px_150px]">
         {work.map((exp) => (
           <Fragment key={exp.id}>
-            <span className="text-xs text-gray-300 md:text-[13px]">
+            <span className="text-xs text-gray-300 md:text-sm">
               {exp.designation}
             </span>
-            <span className="text-xs text-white md:text-[13px]">
-              {exp.company}
-            </span>
-            <span className="text-[11px] text-gray-300 md:text-xs">
+            <span className="text-xs text-white md:text-sm">{exp.company}</span>
+            <span className="text-[11px] text-gray-300 md:text-sm">
               {exp.time}
             </span>
           </Fragment>
