@@ -3,6 +3,7 @@ import { BookmarkItem } from "@components/Bookmarks/Item";
 import { Container } from "@components/Common/Container";
 import { NexusGenFieldTypes } from "generated/nexus-typegen.gen";
 import { NextPage } from "next";
+import { Fragment } from "react";
 import { GET_ALL_BOOKMARKS } from "src/graphql/queries/bookmarks";
 import { TPageProps } from "src/types";
 
@@ -12,8 +13,6 @@ interface GetBookmarks {
 
 const Bookmarks: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
   const { data, loading } = useQuery<GetBookmarks>(GET_ALL_BOOKMARKS);
-  if (loading)
-    return <p className="text-xs font-light text-gray-400 m-4">Loading...</p>;
 
   return (
     <Container isSidebarOpen={isSidebarOpen}>
@@ -22,21 +21,27 @@ const Bookmarks: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
         Things found on the interwebs that needed to be saved
       </p>
 
-      <section className="flex justify-between my-6 lg:my-12">
-        <p className="text-xs font-medium text-gray-400 lg:text-base">
-          {data?.bookmarks?.length} bookmarks
-        </p>
-      </section>
-      <section className="flex flex-col mt-8">
-        {data?.bookmarks.map((bookmark) => (
-          <BookmarkItem
-            key={bookmark.uuid}
-            title={bookmark.title}
-            url={bookmark.url}
-            tag={bookmark.tag}
-          />
-        ))}
-      </section>
+      {loading ? (
+        <p className="text-xs font-light text-gray-400 m-4">Loading...</p>
+      ) : (
+        <Fragment>
+          <section className="flex justify-between my-6 lg:my-12">
+            <p className="text-xs font-medium text-gray-400 lg:text-base">
+              {data?.bookmarks?.length} bookmarks
+            </p>
+          </section>
+          <section className="flex flex-col mt-8">
+            {data?.bookmarks.map((bookmark) => (
+              <BookmarkItem
+                key={bookmark.uuid}
+                title={bookmark.title}
+                url={bookmark.url}
+                tag={bookmark.tag}
+              />
+            ))}
+          </section>
+        </Fragment>
+      )}
     </Container>
   );
 };

@@ -3,6 +3,7 @@ import HamburgerIcon from "@svg/hamburger.svg";
 import { Fragment } from "react";
 import useWindowSize from "src/hooks/useWindowSize";
 import { Size } from "src/types";
+import { InternalHeaderLink } from "./LinkButton";
 type THeaderProps = {
   handleSidebarOpen: (handleState: boolean) => void;
 };
@@ -22,6 +23,20 @@ const Header = ({ handleSidebarOpen }: THeaderProps) => {
           <Circle depth={0.25} bottom={130} innerClass={5} />
         </div>
         <section className="flex items-baseline">
+          {!isMobile && (
+            <section className="mr-4">
+              <InternalHeaderLink
+                href="/"
+                text="Home"
+                onClick={() => handleSidebarOpen(false)}
+              />
+              <InternalHeaderLink
+                href="/bookmarks"
+                text="Bookmarks"
+                onClick={() => handleSidebarOpen(false)}
+              />
+            </section>
+          )}
           <div className="opacity-0 mr-2 animate-fadeIn [animation-delay:1500ms] md:mr-3 lg:mr-0">
             <Location />
           </div>
