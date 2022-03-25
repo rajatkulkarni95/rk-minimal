@@ -10,7 +10,6 @@ type TInternalLink = {
   href: string;
   text: string;
   onClick: () => void;
-  classes?: string;
 };
 
 export const PrimaryLinkButton = ({ href, text }: TProps) => {
@@ -39,21 +38,40 @@ export const SecondaryLinkButton = ({ href, text }: TProps) => {
   );
 };
 
-export const InternalLink = ({
-  href,
-  text,
-  onClick,
-  classes,
-}: TInternalLink) => {
+export const InternalLink = ({ href, text, onClick }: TInternalLink) => {
   const router = useRouter();
   const isCurrentPath = router.pathname === href;
+
   return (
     <Link href={href}>
       <button
         onClick={onClick}
-        className={`py-2 px-4 rounded-md text-sm text-left cursor-pointer bg-zinc-800 text-zinc-50 hover:bg-zinc-700 w-full mb-4 ${
-          isCurrentPath ? "bg-zinc-100 text-zinc-800" : ""
-        } ${classes}`}
+        className={`py-2 px-4 rounded-md text-sm text-left cursor-pointer 
+             w-full mb-4
+        } ${
+          isCurrentPath
+            ? "bg-zinc-100 text-zinc-800"
+            : "bg-zinc-800 text-zinc-50 hover:bg-zinc-700"
+        }`}
+      >
+        {text}
+      </button>
+    </Link>
+  );
+};
+
+export const InternalHeaderLink = ({ href, text, onClick }: TInternalLink) => {
+  const router = useRouter();
+  const isCurrentPath = router.pathname === href;
+
+  return (
+    <Link href={href}>
+      <button
+        onClick={onClick}
+        className={`py-2 px-4 rounded-md text-sm text-left cursor-pointer bg-transparent 
+        w-fit ml-4 hover:bg-zinc-800 ${
+          isCurrentPath ? "text-zinc-50" : "text-zinc-400"
+        }`}
       >
         {text}
       </button>
