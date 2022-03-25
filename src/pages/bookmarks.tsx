@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { BookmarkItem } from "@components/Bookmarks/Item";
-import { Container } from "@components/Common/Container";
+import { Main } from "@components/Common/Main";
 import { NexusGenFieldTypes } from "generated/nexus-typegen.gen";
 import { NextPage } from "next";
 import { Fragment } from "react";
@@ -15,7 +15,7 @@ const Bookmarks: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
   const { data, loading } = useQuery<GetBookmarks>(GET_ALL_BOOKMARKS);
 
   return (
-    <Container isSidebarOpen={isSidebarOpen}>
+    <Main isSidebarOpen={isSidebarOpen}>
       <h3 className="text-lg uppercase text-gray-100 lg:text-2xl">Bookmarks</h3>
       <p className="mt-1 text-xs font-light text-gray-400 lg:text-base">
         Things found on the interwebs that needed to be saved
@@ -42,7 +42,7 @@ const Bookmarks: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
           </section>
         </Fragment>
       )}
-    </Container>
+    </Main>
   );
 };
 

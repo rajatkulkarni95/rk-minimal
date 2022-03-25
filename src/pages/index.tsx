@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 import MainContainer from "@components/MainContainer";
-import { Container } from "@components/Common/Container";
+import { Main } from "@components/Common/Main";
 import { TPageProps } from "src/types";
 
 const Home: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
   return (
-    <Container isSidebarOpen={isSidebarOpen}>
+    <Main isSidebarOpen={isSidebarOpen}>
       <MainContainer />
-    </Container>
+    </Main>
   );
 };
 
