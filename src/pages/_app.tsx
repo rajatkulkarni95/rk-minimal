@@ -7,7 +7,7 @@ import { defaultSEO } from "@config/seo";
 import Header from "@components/Common/Header";
 import { useApollo } from "@lib/apollo";
 import { useState } from "react";
-import Sidebar from "@components/Common/Sidebar";
+import Sidebar from "@components/Sidebar";
 
 function App({ Component, pageProps }: AppProps) {
   const apolloClient = useApollo(pageProps);

@@ -1,7 +1,8 @@
 import CloseIcon from "@svg/close.svg";
 import { useRef } from "react";
 import useOnClickOutside from "src/hooks/useOnClickOutside";
-import { InternalLink } from "./LinkButton";
+import { InternalLink } from "@components/Common/LinkButton";
+import SidebarNavigation from "./SidebarNavigation";
 
 type TProps = {
   hideSidebar: () => void;
@@ -16,7 +17,7 @@ const Sidebar = ({ hideSidebar, showSidebar }: TProps) => {
   return (
     <aside
       ref={sidebarRef}
-      className={`w-[280px] z-30 fixed right-0 top-0 flex h-full bg-zinc-900 flex-none transform flex-col overflow-y-auto border-l border-zinc-700 transition duration-200 ease-in-out  ${
+      className={`w-[280px] z-30 fixed right-0 top-0 flex h-full bg-zinc-900 flex-none transform flex-col overflow-y-auto border-l border-zinc-700 transition duration-500 ease-in-out  ${
         showSidebar ? "translate-x-0 " : "translate-x-full"
       }`}
     >
@@ -28,15 +29,7 @@ const Sidebar = ({ hideSidebar, showSidebar }: TProps) => {
           <CloseIcon />
         </button>
       </section>
-
-      <section className="mt-8 px-4 w-full">
-        <InternalLink href="/" text="Home" onClick={hideSidebar} />
-        <InternalLink
-          href="/bookmarks"
-          text="Bookmarks"
-          onClick={hideSidebar}
-        />
-      </section>
+      <SidebarNavigation hideSidebar={hideSidebar} />
     </aside>
   );
 };
