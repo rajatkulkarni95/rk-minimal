@@ -30,7 +30,7 @@ const Bookmarks: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
               {data?.bookmarks?.length} bookmarks
             </p>
           </section>
-          <section className="flex flex-col mt-8">
+          <section className="flex flex-col mt-8 lg:h-[500px] lg:overflow-y-auto">
             {data?.bookmarks.map((bookmark) => (
               <BookmarkItem
                 key={bookmark.uuid}
