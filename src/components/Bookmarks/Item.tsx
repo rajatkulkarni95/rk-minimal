@@ -20,7 +20,7 @@ export const BookmarkItem = ({ title, url, tag }: IBookmarkItem) => {
           <p className="text-sm text-gray-50 font-normal hover:text-green-500 lg:text-base">
             {title}
           </p>
-          <p className="text-xs text-gray-400 font-light hover:underline lg:text-sm">
+          <p className="text-xs text-gray-400 font-light truncate hover:underline lg:text-sm">
             {url}
           </p>
         </a>
