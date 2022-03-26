@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useInterval } from "./useInterval";
 
 export const useCurrentTime = () => {
   const [currentTime, setCurrentTime] = useState<string>();
   const date = new Date();
-  useEffect(() => {
+  useInterval(() => {
     const getCurrentTime = date.getTime();
     const getCurrentTimezoneOffset = date.getTimezoneOffset();
 
@@ -15,7 +16,7 @@ export const useCurrentTime = () => {
     const displayTime = myLocalTime.toTimeString()?.slice(0, 5);
 
     setCurrentTime(displayTime);
-  }, []);
+  }, 1000);
 
   const currentDay = new Intl.DateTimeFormat("en-US", {
     weekday: "short",
