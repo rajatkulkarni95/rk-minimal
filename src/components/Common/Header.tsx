@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import useWindowSize from "src/hooks/useWindowSize";
 import { Size } from "src/types";
 import NavLinks from "@components/Common/NavLinks";
+import Link from "next/link";
 type THeaderProps = {
   handleSidebarOpen: (handleState: boolean) => void;
 };
@@ -16,13 +17,15 @@ const Header = ({ handleSidebarOpen }: THeaderProps) => {
     <Fragment>
       <header className="w-full flex justify-between items-center py-2 px-4 sm:px-8 sm:pt-4 md:w-3/4 md:px-6 md:mx-auto md:pt-4 lg:pt-8">
         <section className="flex items-center">
-          <div className="h-16 w-16">
-            <Circle depth={4} bottom={0} />
-            <Circle depth={3} bottom={56} innerClass={2} />
-            <Circle depth={2} bottom={96} innerClass={3} />
-            <Circle depth={1} bottom={120} innerClass={4} />
-            <Circle depth={0.25} bottom={130} innerClass={5} />
-          </div>
+          <Link href="/">
+            <div className="h-16 w-16 cursor-pointer">
+              <Circle depth={4} bottom={0} />
+              <Circle depth={3} bottom={56} innerClass={2} />
+              <Circle depth={2} bottom={96} innerClass={3} />
+              <Circle depth={1} bottom={120} innerClass={4} />
+              <Circle depth={0.25} bottom={130} innerClass={5} />
+            </div>
+          </Link>
           {!isMobile && <NavLinks />}
         </section>
         <section className="flex items-baseline">
