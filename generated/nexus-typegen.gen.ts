@@ -139,6 +139,9 @@ export interface NexusGenArgTypes {
     bookmark: { // args
       id: string; // String!
     }
+    bookmarks: { // args
+      tagUuid?: string | null; // String
+    }
     tag: { // args
       id: string; // String!
     }

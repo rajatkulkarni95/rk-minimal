@@ -21,7 +21,7 @@ export const BookmarkItem = ({ title, url, tag }: IBookmarkItem) => {
             {title}
           </p>
           <p className="text-xs text-gray-400 font-light truncate hover:underline lg:text-sm">
-            {url}
+            {url.replace("https://", "")}
           </p>
         </a>
         <BookmarkTag

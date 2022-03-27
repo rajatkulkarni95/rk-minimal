@@ -23,14 +23,24 @@ export const Bookmark = objectType({
   },
 });
 
-// Fetch All Bookmarks
 export const BookmarkQuery = extendType({
   type: "Query",
   definition(t) {
     t.list.field("bookmarks", {
       type: "Bookmark",
-      resolve: (_, __, ctx) => {
-        return ctx.prisma.bookmark.findMany({ orderBy: { createdAt: "desc" } });
+      args: {
+        tagUuid: stringArg(),
+      },
+      resolve: (_, args, ctx) => {
+        const where = args.tagUuid
+          ? {
+              tagUuid: args.tagUuid,
+            }
+          : {};
+        return ctx.prisma.bookmark.findMany({
+          where,
+          orderBy: { createdAt: "desc" },
+        });
       },
     });
 
