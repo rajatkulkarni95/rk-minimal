@@ -8,7 +8,6 @@ import Header from "@components/Common/Header";
 import { useApollo } from "@lib/apollo";
 import { useState } from "react";
 import Sidebar from "@components/Sidebar";
-import NavLinks from "@components/Common/NavLinks";
 
 function App({ Component, pageProps }: AppProps) {
   const apolloClient = useApollo(pageProps);
@@ -19,14 +18,13 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <main className="relative flex h-full min-h-screen w-full flex-col bg-zinc-900">
+      <main className="relative flex h-full min-h-screen lg:w-[900px] lg:mx-auto flex-col bg-zinc-900">
         <DefaultSeo {...defaultSEO} />
         <Header handleSidebarOpen={handleSidebarOpen} />
         <Sidebar
           hideSidebar={() => handleSidebarOpen(false)}
           showSidebar={showSidebar}
         />
-        <NavLinks />
         <Component {...pageProps} isSidebarOpen={showSidebar} />
         <Footer />
       </main>
