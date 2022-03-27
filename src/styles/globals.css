@@ -12,7 +12,7 @@ html {
 }
 
 #__next {
-    background-color: #181818;
+    background-color: #18181B;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
