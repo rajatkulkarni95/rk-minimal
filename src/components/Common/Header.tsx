@@ -14,7 +14,7 @@ const Header = ({ handleSidebarOpen }: THeaderProps) => {
 
   return (
     <Fragment>
-      <header className="w-full flex justify-between items-center py-2 px-4 sm:px-8 sm:pt-4 md:px-12 md:pt-4 lg:pt-8">
+      <header className="w-full flex justify-between items-center py-2 px-4 sm:px-8 sm:pt-4 md:w-3/4 md:px-6 md:mx-auto md:pt-4 lg:pt-8">
         <section className="flex items-center">
           <div className="h-16 w-16">
             <Circle depth={4} bottom={0} />
