@@ -12,7 +12,20 @@ interface GetBookmarks {
 }
 
 const Bookmarks: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
-  const { data, loading } = useQuery<GetBookmarks>(GET_ALL_BOOKMARKS);
+  const { data, loading, error } = useQuery<GetBookmarks>(GET_ALL_BOOKMARKS);
+
+  if (error) {
+    return (
+      <Main isSidebarOpen={isSidebarOpen}>
+        <p className="text-xs font-normal text-gray-300 mt-4 mx-4 lg:text-base lg:my-2 lg:mx-12">
+          Oh boy! Seems like something went wrong.{" "}
+        </p>
+        <p className="text-xs font-normal text-gray-300 mt-2 mx-4 lg:text-base lg:my-2 lg:mx-12">
+          Don't worry, nothing a cup of coffee or two can't fix. Maybe
+        </p>
+      </Main>
+    );
+  }
 
   return (
     <Main isSidebarOpen={isSidebarOpen}>
