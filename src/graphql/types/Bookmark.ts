@@ -30,7 +30,7 @@ export const BookmarkQuery = extendType({
     t.list.field("bookmarks", {
       type: "Bookmark",
       resolve: (_, __, ctx) => {
-        return ctx.prisma.bookmark.findMany();
+        return ctx.prisma.bookmark.findMany({ orderBy: { createdAt: "desc" } });
       },
     });
 
