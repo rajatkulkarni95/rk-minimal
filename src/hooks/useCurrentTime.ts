@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useInterval } from "./useInterval";
 
 export const useCurrentTime = () => {
-  const [currentTime, setCurrentTime] = useState<string>();
+  const [currentTime, setCurrentTime] = useState<string>("00:00");
   const date = new Date();
   useInterval(() => {
     const getCurrentTime = date.getTime();
