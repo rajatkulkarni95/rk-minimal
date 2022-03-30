@@ -13,7 +13,18 @@ const Info = () => {
           Usually work with Javascript/Typescript, within the React Ecosystem.
         </p>
         <p className="text-sm text-gray-200 mt-2 leading-[1.5em]">
-          Tinkering with animations, Python, Figma.
+          Tinkering with Animations, Python, Figma & Go.
+        </p>
+        <p className="text-sm text-gray-200 mt-2 leading-[1.5em]">
+          Currently enriching meeting experiences at{" "}
+          <a
+            href="https://avoma.com"
+            className="text-red-400 border-b-2 border-red-400"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Avoma
+          </a>
         </p>
       </article>
     </section>
