@@ -18,7 +18,7 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <main className="relative flex h-full min-h-screen lg:w-[900px] lg:mx-auto flex-col bg-zinc-900">
+      <main className="relative flex h-full min-h-screen flex-col bg-zinc-900">
         <DefaultSeo {...defaultSEO} />
         <Header handleSidebarOpen={handleSidebarOpen} />
         <Sidebar

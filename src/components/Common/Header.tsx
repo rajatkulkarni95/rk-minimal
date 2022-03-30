@@ -15,8 +15,8 @@ const Header = ({ handleSidebarOpen }: THeaderProps) => {
 
   return (
     <Fragment>
-      <header className="w-full flex justify-between items-center py-2 px-4 sm:px-8 sm:pt-4 md:w-3/4 md:px-6 md:mx-auto md:pt-4 lg:pt-8">
-        <section className="flex items-center">
+      <header className="w-full flex justify-between items-center sticky top-0 bg-neutral-900 border-b border-zinc-800 py-2 px-4 sm:px-8 lg:py-5">
+        <section className="flex items-center lg:w-40">
           <Link href="/">
             <div className="h-16 w-16 cursor-pointer">
               <Circle depth={4} bottom={0} />
@@ -26,10 +26,10 @@ const Header = ({ handleSidebarOpen }: THeaderProps) => {
               <Circle depth={0.25} bottom={130} innerClass={5} />
             </div>
           </Link>
-          {!isMobile && <NavLinks />}
         </section>
+        {!isMobile && <NavLinks />}
         <section className="flex items-baseline">
-          <div className="opacity-0 mr-2 animate-fadeIn [animation-delay:1500ms] md:mr-3 lg:mr-0">
+          <div className="mr-2 md:mr-3 lg:mr-0">
             <Location />
           </div>
           {isMobile && (

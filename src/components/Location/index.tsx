@@ -33,7 +33,7 @@ const Location = () => {
   );
 
   return (
-    <section className="flex flex-col md:ml-16">
+    <section className="flex flex-col">
       <div className="flex items-center mb-1">
         <span className="text-zinc-100 text-xs mr-2">
           {currentDay}, {currentTime}
