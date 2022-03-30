@@ -34,7 +34,7 @@ const Header = ({ handleSidebarOpen }: THeaderProps) => {
           </div>
           {isMobile && (
             <button
-              className="p-2 bg-zinc-800 rounded-md flex hover:bg-zinc-700"
+              className="p-2 bg-zinc-800 rounded-md flex opacity-0 animate-fadeIn [animation-delay:1500ms] hover:bg-zinc-700"
               onClick={() => handleSidebarOpen(true)}
             >
               <HamburgerIcon />
