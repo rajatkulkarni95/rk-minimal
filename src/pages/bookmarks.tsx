@@ -29,7 +29,7 @@ const Bookmarks: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
 
   return (
     <Main isSidebarOpen={isSidebarOpen}>
-      <div className="flex flex-col lg:ml-16">
+      <div className="flex flex-col">
         <section className="flex justify-between items-center mt-4">
           <h3 className="text-lg uppercase text-gray-100 lg:text-2xl">
             Bookmarks{" "}
@@ -50,7 +50,7 @@ const Bookmarks: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
           </p>
         ) : (
           <Fragment>
-            <section className="flex flex-col mt-8 lg:pr-4 lg:h-[600px] lg:overflow-y-auto">
+            <section className="flex flex-col mt-8 lg:pr-4">
               {data?.bookmarks.map((bookmark) => (
                 <BookmarkItem
                   key={bookmark.uuid}

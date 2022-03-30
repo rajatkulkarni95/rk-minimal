@@ -8,7 +8,7 @@ type TMainProps = {
 export const Main = ({ children, isSidebarOpen }: TMainProps) => {
   return (
     <main
-      className={`w-full h-full px-4 pb-4 mx-auto sm:w-11/12 md:w-3/4 md:mt-0 md:pb-10 xl:my-auto ${
+      className={`w-full h-full px-4 pb-4 mx-auto sm:w-11/12 md:w-3/4 md:mt-4 md:pb-10 ${
         isSidebarOpen && "opacity-60"
       }`}
     >
