@@ -29,7 +29,7 @@ const Header = ({ handleSidebarOpen }: THeaderProps) => {
         </section>
         {!isMobile && <NavLinks />}
         <section className="flex items-baseline">
-          <div className="mr-2 md:mr-3 lg:mr-0">
+          <div className="opacity-0 mr-2 animate-fadeIn [animation-delay:1500ms] md:mr-3 lg:mr-0">
             <Location />
           </div>
           {isMobile && (
