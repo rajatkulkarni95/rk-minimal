@@ -9,7 +9,7 @@ const Footer = () => {
   if (isMobile) return null;
 
   return (
-    <footer className="h-12 bg-zinc-900 shadow-md flex items-baseline py-2 px-6 sticky justify-center md:justify-between bottom-0 opacity-0 animate-fadeIn mt-auto [animation-delay:3000ms]">
+    <footer className="h-12 bg-neutral-900 z-10 shadow-md flex items-baseline py-2 px-6 sticky justify-center md:justify-between bottom-0 opacity-0 animate-fadeIn mt-auto [animation-delay:3000ms]">
       <aside>
         <a
           href={links[0].url}
