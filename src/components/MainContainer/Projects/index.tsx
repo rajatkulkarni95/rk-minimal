@@ -15,17 +15,14 @@ const Projects = () => {
             className="flex items-baseline flex-col md:flex-row"
             key={project.id}
           >
-            <span className="text-xs text-gray-500 font-light mr-2 py-1 border-b border-b-gray-600">
-              {project.id}
-            </span>
-            <div key={project.id} className="flex flex-col my-2 w-full">
+            <div key={project.id} className="flex flex-col mb-4 w-full">
               <div className="flex justify-between items-center">
                 <p className="flex items-baseline">
                   <a
                     href={project.site}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm border-b border-transparent pt-1 pb-[3px] hover:border-b-gray-600"
+                    className="text-sm border-b-2 border-b-gray-600 pt-1 pb-[3px] hover:text-yellow-500"
                   >
                     {project.title}{" "}
                   </a>
