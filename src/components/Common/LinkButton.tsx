@@ -67,11 +67,11 @@ export const InternalHeaderLink = ({ href, text }: TProps) => {
   return (
     <Link href={href}>
       <button
-        className={`py-1 px-3 rounded-full text-sm text-center cursor-pointer bg-zinc-800 w-28
-        mr-4 hover:bg-zinc-700 ${
+        className={`py-1 px-4 rounded-full text-xs text-center cursor-pointer 
+        mr-2 ${
           isCurrentPath
-            ? "bg-zinc-50 text-zinc-900 hover:bg-zinc-300"
-            : "text-zinc-400"
+            ? "bg-zinc-800 text-zinc-100"
+            : "bg-transparent text-zinc-400 hover:bg-zinc-800"
         }`}
       >
         {text}

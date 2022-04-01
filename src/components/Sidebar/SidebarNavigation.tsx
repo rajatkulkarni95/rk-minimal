@@ -10,7 +10,7 @@ const SidebarNavigation = ({ hideSidebar }: TProps) => {
     <div className="flex flex-col">
       <section className="mt-4 px-4 w-full">
         <p className="text-xs text-gray-100 mb-2">Site</p>
-        <InternalLink href="/" text="Home" onClick={hideSidebar} />
+        <InternalLink href="/" text="Info" onClick={hideSidebar} />
         <InternalLink
           href="/bookmarks"
           text="Bookmarks"
