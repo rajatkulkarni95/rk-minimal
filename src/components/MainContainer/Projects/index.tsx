@@ -32,11 +32,13 @@ const Projects = () => {
                     </span>
                   )}
                 </p>
-                <TooltipProvider tooltip="View Code">
-                  <a href={project.code} target="_blank" rel="noreferrer">
-                    <GithubIcon height={16} width={16} />
-                  </a>
-                </TooltipProvider>
+                {project.code !== "" && (
+                  <TooltipProvider tooltip="View Code">
+                    <a href={project.code} target="_blank" rel="noreferrer">
+                      <GithubIcon height={16} width={16} />
+                    </a>
+                  </TooltipProvider>
+                )}
               </div>
               <p className="text-[13px] mt-1 text-gray-400">
                 {project.description}
