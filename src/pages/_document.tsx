@@ -8,6 +8,10 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <link href="/img/favicon.ico" rel="shortcut icon" />
         <link href="/img/meta/site.webmanifest" rel="manifest" />
         <link

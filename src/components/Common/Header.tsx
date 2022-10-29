@@ -16,7 +16,6 @@ const Header = ({ handleSidebarOpen }: THeaderProps) => {
   return (
     <Fragment>
       <header className="w-full z-10 flex justify-between items-center sticky top-0 bg-neutral-900 border-b border-zinc-800 py-2 px-4 sm:px-8 lg:py-3">
-        {!isMobile && <NavLinks />}
         <section className="flex items-center lg:w-40">
           <Link href="/">
             <div className="h-16 w-16 cursor-pointer">

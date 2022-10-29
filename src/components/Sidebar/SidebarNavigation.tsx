@@ -8,7 +8,7 @@ type TProps = {
 const SidebarNavigation = ({ hideSidebar }: TProps) => {
   return (
     <div className="flex flex-col">
-      <section className="mt-4 px-4 w-full">
+      {/* <section className="mt-4 px-4 w-full">
         <p className="text-xs text-gray-100 mb-2">Site</p>
         <InternalLink href="/" text="Info" onClick={hideSidebar} />
         <InternalLink
@@ -16,8 +16,8 @@ const SidebarNavigation = ({ hideSidebar }: TProps) => {
           text="Bookmarks"
           onClick={hideSidebar}
         />
-      </section>
-      <section className="mt-16 px-4 w-full flex flex-col">
+      </section> */}
+      <section className="px-4 w-full flex flex-col">
         <p className="text-xs text-gray-100 mb-2">On the web</p>
         {links.slice(1).map((link) => {
           const { icon: LinkIcon } = link;
