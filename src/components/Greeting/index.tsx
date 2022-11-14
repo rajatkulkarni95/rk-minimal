@@ -19,10 +19,10 @@ const Greeting = ({ salutation }: TGreetingProps) => {
   }, [index]);
 
   return (
-    <section className="flex items-center lg:mt-44 mb-4 md:ml-16">
+    <section className="flex items-center pt-24 lg:mt-44 mb-4 md:ml-16">
       <SiteLogo />
       <div className="flex flex-col">
-        <h1 className="text-4xl font-bold">{salutation}</h1>
+        <h1 className="text-2xl lg:text-4xl font-bold">{salutation}</h1>
         <p className="text-base font-medium text-zinc-500">
           Product Engineer / Pixel Pusher
         </p>
