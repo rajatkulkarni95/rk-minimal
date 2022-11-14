@@ -7,13 +7,14 @@ import { Fragment } from "react";
 
 const MainContainer = () => {
   const salutation =
-    SALUTATIONS[Math.floor(Math.random() * SALUTATIONS.length)];
+    SALUTATIONS[Math.floor(Math.random() * SALUTATIONS.length)] +
+    ", I'm Rajat!";
   return (
     <Fragment>
       <Greeting salutation={salutation} />
-      <Info />
-      <Projects />
-      <Work />
+      {/* <Info /> */}
+      {/* <Projects />
+      <Work /> */}
     </Fragment>
   );
 };

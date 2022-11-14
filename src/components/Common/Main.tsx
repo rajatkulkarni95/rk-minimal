@@ -12,7 +12,7 @@ export const Main = ({ children, isSidebarOpen }: TMainProps) => {
         isSidebarOpen && "opacity-60"
       }`}
     >
-      <div className="mx-auto md:overflow-y-auto lg:pb-16 lg:w-[720px]">
+      <div className="mx-auto md:overflow-y-auto lg:pb-16 lg:w-[900px]">
         {children}
       </div>
     </main>

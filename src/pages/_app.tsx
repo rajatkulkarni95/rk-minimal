@@ -18,15 +18,15 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <main className="relative flex h-full min-h-screen flex-col bg-zinc-900">
+      <main className="relative flex h-full min-h-screen flex-col bg-[#101010]">
         <DefaultSeo {...defaultSEO} />
-        <Header handleSidebarOpen={handleSidebarOpen} />
+        {/* <Header handleSidebarOpen={handleSidebarOpen} /> */}
         <Sidebar
           hideSidebar={() => handleSidebarOpen(false)}
           showSidebar={showSidebar}
         />
         <Component {...pageProps} isSidebarOpen={showSidebar} />
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </ApolloProvider>
   );

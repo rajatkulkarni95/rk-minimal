@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Logo from "@svg/logo.svg";
+import SiteLogo from "@components/Logo";
 
 type TGreetingProps = {
   salutation: string;
@@ -17,12 +19,15 @@ const Greeting = ({ salutation }: TGreetingProps) => {
   }, [index]);
 
   return (
-    <div className="flex items-center mt-4 mb-4 md:ml-16">
-      <h1 className="font-light text-2xl leading-5">{typing}</h1>
-      <span className="text-xl font-semibold opacity-0 animate-blinking">
-        _
-      </span>
-    </div>
+    <section className="flex items-center lg:mt-44 mb-4 md:ml-16">
+      <SiteLogo />
+      <div className="flex flex-col">
+        <h1 className="text-4xl font-bold">{salutation}</h1>
+        <p className="text-base font-medium text-zinc-500">
+          Product Engineer / Pixel Pusher
+        </p>
+      </div>
+    </section>
   );
 };
 

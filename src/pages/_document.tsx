@@ -5,11 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
         <link href="/img/favicon.ico" rel="shortcut icon" />
@@ -34,7 +30,7 @@ export default function Document() {
         <meta content="#18181D" name="theme-color" />
         <meta content="#18181D" name="msapplication-TileColor" />
       </Head>
-      <body className="bg-white dark:bg-black text-white dark:text-black font-mono antialiased">
+      <body className="bg-white dark:bg-black text-white dark:text-black font-sans antialiased">
         <Main />
         <NextScript />
       </body>

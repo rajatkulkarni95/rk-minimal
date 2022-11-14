@@ -1,13 +1,12 @@
 export const SALUTATIONS = [
   "Hey!",
   "Hello",
-  "Greetings!",
+  "Greetings",
   "Namaste",
   "Hola",
   "Hallo",
   "Ciao",
   "Hei",
   "Aloha",
-  "Hey There!",
-  "Good Day :)",
+  "Hey there",
 ];
