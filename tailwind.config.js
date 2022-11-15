@@ -1,4 +1,5 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: [
@@ -32,6 +33,34 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+      },
+      textColor: {
+        primary: "var(--color-text-primary)",
+        secondary: "var(--color-text-secondary)",
+        proseSeondary: "var(--color-text-prose-secondary)",
+        tertiary: "var(--color-text-tertiary)",
+        icon: "var(--color-icon)",
+        appPrimary: "var(--color-app-primary)",
+        cta: "var(--color-text-cta)",
+        ...colors,
+      },
+      backgroundColor: {
+        primary: "var(--color-bg-primary)",
+        secondary: "var(--color-bg-secondary)",
+        tertiary: "var(--color-bg-tertiary)",
+        accent: "var(--color-bg-accent)",
+        extreme: "var(--color-bg-extreme)",
+        appPrimary: "var(--color-app-primary)",
+        sidebar: "var(--color-app-sidebar)",
+        code: "var(--color-bg-code)",
+        cta: "var(--color-bg-cta)",
+        core: "var(--color-bg-core)",
+        ...colors,
+      },
+      borderColor: {
+        theme: "var(--color-border)",
+        primary: "var(--color-border-primary)",
+        ...colors,
       },
       animation: {
         fadeIn: "fadeIn 1s ease-in forwards",
