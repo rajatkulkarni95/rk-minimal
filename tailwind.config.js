@@ -64,7 +64,7 @@ module.exports = {
       },
       animation: {
         fadeIn: "fadeIn 1s ease-in forwards",
-        blinking: "blinking 0.75s cubic-bezier(0.4, 0, 0.6, 1) 3",
+        blinking: "blinking 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         slideDownAndFade: "slideDownAndFade 0.5s ease forwards",
         spin10: "spin 10s linear infinite",
         spin8: "spin 8s linear infinite",
