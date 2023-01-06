@@ -19,7 +19,7 @@ export const useCurrentTime = () => {
   }, 1000);
 
   const currentDay = new Intl.DateTimeFormat("en-US", {
-    weekday: "short",
+    weekday: "long",
   }).format(date);
 
   return { currentTime, currentDay };

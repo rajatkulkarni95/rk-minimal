@@ -26,7 +26,7 @@ function App({ Component, pageProps }: AppProps) {
           showSidebar={showSidebar}
         />
         <Component {...pageProps} isSidebarOpen={showSidebar} />
-        {/* <Footer /> */}
+        <Footer />
       </main>
     </ApolloProvider>
   );
