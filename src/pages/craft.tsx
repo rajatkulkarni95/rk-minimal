@@ -1,11 +1,11 @@
 import { NextPage } from "next";
 import Link from "next/link";
 
-const ErrorPage: NextPage = () => {
+const CraftPage: NextPage = () => {
   return (
     <div className="w-full h-screen px-4 pb-4 mx-auto md:w-3/4 md:mt-0 md:pb-10 lg:pb-16 lg:w-[720px] xl:my-auto">
       <h3 className="text-md my-16 text-center font-medium text-gray-200 xl:text-lg">
-        Look, between the two of us, you really shouldn't be here!
+        Craft is something that you won't find here
       </h3>
       <section className="flex justify-center">
         <Link href="/">
@@ -18,4 +18,4 @@ const ErrorPage: NextPage = () => {
   );
 };
 
-export default ErrorPage;
+export default CraftPage;
