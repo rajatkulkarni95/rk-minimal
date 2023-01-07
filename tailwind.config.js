@@ -1,10 +1,16 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
+  ],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant("children", "& > *");
+    }),
   ],
   darkMode: "class",
   theme: {
@@ -47,6 +53,7 @@ module.exports = {
       backgroundColor: {
         primary: "var(--color-bg-primary)",
         secondary: "var(--color-bg-secondary)",
+        element: "var(--color-bg-element)",
         tertiary: "var(--color-bg-tertiary)",
         accent: "var(--color-bg-accent)",
         extreme: "var(--color-bg-extreme)",
@@ -60,6 +67,7 @@ module.exports = {
       borderColor: {
         theme: "var(--color-border)",
         primary: "var(--color-border-primary)",
+        secondary: "var(--color-border-secondary)",
         ...colors,
       },
       animation: {

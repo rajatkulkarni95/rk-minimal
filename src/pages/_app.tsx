@@ -8,6 +8,7 @@ import Header from "@components/Common/Header";
 import { useApollo } from "@lib/apollo";
 import { useState } from "react";
 import Sidebar from "@components/Sidebar";
+import CommandBar from "@components/CommandBar";
 
 function App({ Component, pageProps }: AppProps) {
   const apolloClient = useApollo(pageProps);
@@ -18,16 +19,18 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <main className="relative flex h-full min-h-screen flex-col bg-[#101010]">
-        <DefaultSeo {...defaultSEO} />
-        {/* <Header handleSidebarOpen={handleSidebarOpen} /> */}
-        <Sidebar
-          hideSidebar={() => handleSidebarOpen(false)}
-          showSidebar={showSidebar}
-        />
-        <Component {...pageProps} isSidebarOpen={showSidebar} />
-        <Footer />
-      </main>
+      <CommandBar>
+        <main className="relative flex h-full min-h-screen flex-col bg-[#101010]">
+          <DefaultSeo {...defaultSEO} />
+          {/* <Header handleSidebarOpen={handleSidebarOpen} /> */}
+          <Sidebar
+            hideSidebar={() => handleSidebarOpen(false)}
+            showSidebar={showSidebar}
+          />
+          <Component {...pageProps} isSidebarOpen={showSidebar} />
+          <Footer />
+        </main>
+      </CommandBar>
     </ApolloProvider>
   );
 }
