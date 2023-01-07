@@ -8,6 +8,7 @@ import {
   KBarPositioner,
   KBarSearch,
   KBarResults,
+  Action,
 } from "kbar";
 import {
   BeakerIcon,
@@ -29,7 +30,7 @@ type TProps = {
 const CommandBar = ({ children }: TProps) => {
   const router = useRouter();
 
-  const iconClasses = `w-4 h-4 block mr-2 text-secondary group-hover:text-primary group-focus:text-primary group-hover:animate-wiggle`;
+  const iconClasses = `w-4 h-4 block mr-2 text-secondary group-hover:text-primary group-hover:animate-wiggle group-aria-selected:text-primary group-aria-selected:animate-wiggle`;
 
   const actions = [
     {
@@ -146,7 +147,7 @@ const CommandBar = ({ children }: TProps) => {
   );
 };
 
-function RenderResults() {
+const RenderResults = () => {
   const { results } = useMatches();
 
   if (results.length === 0) {
@@ -170,33 +171,45 @@ function RenderResults() {
               {item}
             </div>
           ) : (
-            <div
-              className={`px-4 py-3 flex items-center box-border group ${
-                active
-                  ? "text-primary bg-secondary"
-                  : "text-secondary bg-transparent"
-              }`}
-            >
-              {item.icon}
-              {item.name}{" "}
-              {item.shortcut && (
-                <span className="ml-auto">
-                  {item.shortcut.map((shortcut) => (
-                    <kbd
-                      key={`${shortcut}-${item.name}`}
-                      className="ml-1 px-1.5 py-1 font-sans font-medium text-xs bg-tertiary rounded text-secondary group-hover:text-primary"
-                    >
-                      {shortcut}
-                    </kbd>
-                  ))}
-                </span>
-              )}
-            </div>
+            <ResultItem active={active} item={item} />
           )
         }
       />
     </div>
   );
-}
+};
+
+type TResultProps = {
+  active: boolean;
+  item: Action;
+};
+
+const ResultItem = ({ active, item }: TResultProps) => {
+  return (
+    <div
+      className={`px-4 py-3 flex items-center box-border group ${
+        active ? "text-primary bg-secondary" : "text-secondary bg-transparent"
+      }`}
+      aria-selected={active}
+    >
+      {item.icon}
+      {item.name}{" "}
+      {item.shortcut && (
+        <span className="ml-auto">
+          {item.shortcut.map((shortcut) => (
+            <kbd
+              key={`${shortcut}-${item.name}`}
+              className={`ml-1 px-1.5 py-1 font-sans font-medium text-xs bg-tertiary rounded text-secondary group-hover:text-primary ${
+                active ? "text-primary" : ""
+              }`}
+            >
+              {shortcut}
+            </kbd>
+          ))}
+        </span>
+      )}
+    </div>
+  );
+};
 
 export default CommandBar;
