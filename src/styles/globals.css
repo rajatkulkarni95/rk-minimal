@@ -2,44 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 ::selection {
-    background-color: #0368ff;
-    color: #fefefe;
+  background-color: #0368ff;
+  color: #fefefe;
 }
 
 html {
-    min-width: 360px;
-    scroll-behavior: smooth;
-    overflow: hidden;
+  min-width: 360px;
+  scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 #__next {
-    background-color: #18181B;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-weight: 400;
-    text-rendering: optimizeLegibility;
+  background-color: #18181b;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
 }
 
 :root {
-    --color-text-primary: #fafafa;
-    --color-text-secondary: #BBBBBB;
-    --color-text-prose-secondary: #e4e4e7;
-    --color-text-tertiary: #a1a1aa;
-    --color-text-subtle: #71717a;
-    --color-bg-primary: #0F0F10;
-    --color-bg-secondary: #27272a;
-    --color-bg-tertiary: #3f3f46;
-    --color-bg-accent: #1d1d20;
-    --color-bg-extreme: #0F0F10;
-    --color-border: #3f3f46;
-    --color-icon: #e4e4e7;
-    --color-app-primary: #7c3aed;
-    --color-app-sidebar: #151516;
-    --color-bg-code: #1e1e21;
-    --color-bg-cta: #FFFFFF;
-    --color-text-cta: #18181b;
-    --color-bg-core: #18181b;
-    --color-border-primary: #3B82F6;
-  }
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #bbbbbb;
+  --color-text-prose-secondary: #e4e4e7;
+  --color-text-tertiary: #a1a1aa;
+  --color-text-subtle: #71717a;
+  --color-bg-primary: #0f0f10;
+  --color-bg-element: #18181b;
+  --color-bg-secondary: #27272a;
+  --color-bg-tertiary: #3f3f46;
+  --color-bg-accent: #1d1d20;
+  --color-bg-extreme: #0f0f10;
+  --color-border: #3f3f46;
+  --color-border-secondary: #52525b;
+  --color-icon: #e4e4e7;
+  --color-app-primary: #7c3aed;
+  --color-app-sidebar: #151516;
+  --color-bg-code: #1e1e21;
+  --color-bg-cta: #ffffff;
+  --color-text-cta: #18181b;
+  --color-bg-core: #18181b;
+  --color-border-primary: #3b82f6;
+}
 
+#kbar-results-container > div > div::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#kbar-results-container > div > div {
+  scrollbar-width: none !important;
+}
