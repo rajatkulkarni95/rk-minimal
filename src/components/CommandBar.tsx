@@ -182,7 +182,10 @@ function RenderResults() {
               {item.shortcut && (
                 <span className="ml-auto">
                   {item.shortcut.map((shortcut) => (
-                    <kbd className="ml-1 px-1.5 py-1 font-sans font-medium text-xs bg-tertiary rounded text-secondary group-hover:text-primary">
+                    <kbd
+                      key={`${shortcut}-${item.name}`}
+                      className="ml-1 px-1.5 py-1 font-sans font-medium text-xs bg-tertiary rounded text-secondary group-hover:text-primary"
+                    >
                       {shortcut}
                     </kbd>
                   ))}
