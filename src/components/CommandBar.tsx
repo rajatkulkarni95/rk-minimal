@@ -9,6 +9,18 @@ import {
   KBarSearch,
   KBarResults,
 } from "kbar";
+import {
+  BeakerIcon,
+  BookmarkIcon,
+  CodeBracketIcon,
+  EyeIcon,
+  HomeIcon,
+  ServerStackIcon,
+} from "@heroicons/react/20/solid";
+import TwitterIcon from "@svg/twitter.svg";
+import LinkedinIcon from "@svg/linkedin.svg";
+import CVIcon from "@svg/cv.svg";
+import GithubIcon from "@svg/github.svg";
 
 type TProps = {
   children: React.ReactNode;
@@ -17,89 +29,101 @@ type TProps = {
 const CommandBar = ({ children }: TProps) => {
   const router = useRouter();
 
+  const iconClasses = `w-4 h-4 block mr-2 text-secondary group-hover:text-primary group-focus:text-primary group-hover:animate-wiggle`;
+
   const actions = [
     {
       id: "home",
       name: "Home",
-      shortcut: ["h"],
+      shortcut: ["H"],
       keywords: "home",
       section: "On this site",
       perform: () => router.push("/"),
+      icon: <HomeIcon className={iconClasses} />,
     },
     {
       id: "reading-list",
       name: "Reading List",
-      shortcut: ["r", "l"],
+      shortcut: ["R", "L"],
       keywords: "reading list",
       section: "On this site",
       perform: () => router.push("/reading"),
+      icon: <BookmarkIcon className={iconClasses} />,
     },
     {
       id: "projects",
       name: "Projects",
-      shortcut: ["p"],
+      shortcut: ["P"],
       keywords: "projects",
       section: "On this site",
       perform: () => router.push("/projects"),
+      icon: <ServerStackIcon className={iconClasses} />,
     },
     {
       id: "craft",
       name: "Craft",
-      shortcut: ["c"],
+      shortcut: ["C"],
       keywords: "craft",
       section: "On this site",
       perform: () => router.push("/craft"),
+      icon: <BeakerIcon className={iconClasses} />,
     },
     {
       id: "about",
       name: "About",
-      shortcut: ["a"],
+      shortcut: ["A"],
       keywords: "about",
       section: "On this site",
       perform: () => router.push("/about"),
+      icon: <EyeIcon className={iconClasses} />,
     },
     {
       id: "source",
       name: "View Source",
-      shortcut: ["v", "s"],
+      shortcut: ["V", "S"],
       keywords: "view source",
       section: "On this site",
       perform: () =>
         window.open("https://github.com/rajatkulkarni95/rk-minimal", "_blank"),
+      icon: <CodeBracketIcon className={iconClasses} />,
     },
     {
       id: "github",
       name: "Github",
-      shortcut: ["g", "h"],
+      shortcut: ["G", "H"],
       keywords: "github",
       section: "On the web",
       perform: () =>
         window.open("https://github.com/rajatkulkarni95/", "_blank"),
+      icon: <GithubIcon className={iconClasses} />,
     },
     {
       id: "twitter",
       name: "Twitter",
-      shortcut: ["t", "w"],
+      shortcut: ["T", "W"],
       keywords: "twitter",
       section: "On the web",
       perform: () => window.open("https://twitter.com/jokingRajat", "_blank"),
+      icon: <TwitterIcon className={iconClasses} />,
     },
     {
       id: "linkedin",
       name: "LinkedIn",
-      shortcut: ["l", "i"],
+      shortcut: ["L", "I"],
       keywords: "linkedin",
       section: "On the web",
       perform: () =>
         window.open("https://www.linkedin.com/in/rajatkulkarni95/", "_blank"),
+      icon: <LinkedinIcon className={iconClasses} />,
     },
     {
       id: "readcv",
       name: "read.cv",
-      shortcut: ["r", "c"],
+      shortcut: ["R", "C"],
       keywords: "readcv",
       section: "On the web",
       perform: () => window.open("https://read.cv/rajatk", "_blank"),
+      icon: <CVIcon className={iconClasses} />,
     },
   ];
 
@@ -135,25 +159,35 @@ function RenderResults() {
 
   return (
     <div
-      className="pt-0 pb-4 px-4 children:[scrollbar-width:none]"
+      className="pt-0 pb-4 children:[scrollbar-width:none]"
       id="kbar-results-container"
     >
       <KBarResults
         items={results}
         onRender={({ item, active }) =>
           typeof item === "string" ? (
-            <div className="pt-4 pb-2 text-sm font-medium text-secondary">
+            <div className="pt-4 pl-4 pb-2 text-xs font-medium text-tertiary">
               {item}
             </div>
           ) : (
             <div
-              className={`px-4 py-3 rounded  block box-border  ${
+              className={`px-4 py-3 flex items-center box-border group ${
                 active
                   ? "text-primary bg-secondary"
                   : "text-secondary bg-transparent"
               }`}
             >
-              {item.name}
+              {item.icon}
+              {item.name}{" "}
+              {item.shortcut && (
+                <span className="ml-auto">
+                  {item.shortcut.map((shortcut) => (
+                    <kbd className="ml-1 px-1.5 py-1 font-sans font-medium text-xs bg-tertiary rounded text-secondary group-hover:text-primary">
+                      {shortcut}
+                    </kbd>
+                  ))}
+                </span>
+              )}
             </div>
           )
         }

@@ -39,6 +39,11 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+        wiggle: {
+          "0%": { transform: "rotate(-24deg)" },
+          "50%": { transform: "rotate(24deg)" },
+          "100%": { transform: "rotate(0)" },
+        },
       },
       textColor: {
         primary: "var(--color-text-primary)",
@@ -78,6 +83,7 @@ module.exports = {
         spin8: "spin 8s linear infinite",
         spin6: "spin 6s linear infinite",
         spin4: "spin 4s linear infinite",
+        wiggle: "wiggle 1s ease-in-out 1",
       },
     },
     fontFamily: {
