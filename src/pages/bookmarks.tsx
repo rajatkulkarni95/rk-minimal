@@ -5,18 +5,17 @@ import { NexusGenFieldTypes } from "generated/nexus-typegen.gen";
 import { NextPage } from "next";
 import { Fragment } from "react";
 import { GET_ALL_BOOKMARKS } from "src/graphql/queries/bookmarks";
-import { TPageProps } from "src/types";
 
 interface GetBookmarks {
   bookmarks: NexusGenFieldTypes["Bookmark"][];
 }
 
-const Bookmarks: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
+const Bookmarks: NextPage = () => {
   const { data, loading, error } = useQuery<GetBookmarks>(GET_ALL_BOOKMARKS);
 
   if (error) {
     return (
-      <Main isSidebarOpen={isSidebarOpen}>
+      <Main>
         <p className="text-xs font-normal text-gray-300 mt-4 mx-4 lg:text-base lg:my-2 lg:mx-12">
           Oh boy! Seems like something went wrong.{" "}
         </p>
@@ -28,7 +27,7 @@ const Bookmarks: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
   }
 
   return (
-    <Main isSidebarOpen={isSidebarOpen}>
+    <Main>
       <div className="flex flex-col">
         <section className="flex justify-between items-center mt-4">
           <h3 className="text-lg uppercase text-gray-100 lg:text-2xl">
