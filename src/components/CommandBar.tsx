@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useRouter } from "next/router";
 import {
   KBarAnimator,
@@ -159,10 +158,7 @@ const RenderResults = () => {
   }
 
   return (
-    <div
-      className="pt-0 pb-4 children:[scrollbar-width:none]"
-      id="kbar-results-container"
-    >
+    <div className="pt-0 pb-4">
       <KBarResults
         items={results}
         onRender={({ item, active }) =>
