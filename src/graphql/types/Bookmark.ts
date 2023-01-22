@@ -7,7 +7,6 @@ export const Bookmark = objectType({
     t.nonNull.string("title");
     t.nonNull.string("url");
     t.string("image");
-    t.string("description");
     t.string("faviconUrl");
     t.string("tagUuid");
     t.field("tag", {

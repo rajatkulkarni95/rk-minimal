@@ -3,7 +3,6 @@
 
 
 type Bookmark {
-  description: String
   faviconUrl: String
   image: String
   tag: Tag
@@ -15,7 +14,7 @@ type Bookmark {
 
 type Mutation {
   createBookmark(description: String, tagUuid: String!, title: String!, url: String!): Bookmark!
-  createTag(background: String!, border: String!, color: String!, name: String!): Tag!
+  createTag(background: String!, name: String!): Tag!
 }
 
 type Query {
@@ -28,8 +27,6 @@ type Query {
 type Tag {
   background: String!
   bookmarks: [Bookmark]
-  border: String!
-  color: String!
   name: String!
   uuid: String!
 }

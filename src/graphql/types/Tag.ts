@@ -6,8 +6,6 @@ export const Tag = objectType({
     t.nonNull.string("uuid");
     t.nonNull.string("name");
     t.nonNull.string("background");
-    t.nonNull.string("border");
-    t.nonNull.string("color");
     t.list.field("bookmarks", {
       type: "Bookmark",
       resolve: (_parent, args, ctx) => {
@@ -59,15 +57,11 @@ export const CreateTagMutation = extendType({
       args: {
         name: nonNull(stringArg()),
         background: nonNull(stringArg()),
-        border: nonNull(stringArg()),
-        color: nonNull(stringArg()),
       },
       async resolve(_parent, args, ctx) {
         const newTag = {
           name: args.name,
           background: args.background,
-          border: args.border,
-          color: args.color,
         };
 
         return await ctx.prisma.tag.create({
