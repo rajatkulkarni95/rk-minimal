@@ -60,12 +60,12 @@ const CommandBar = ({ children }: TProps) => {
       icon: <ServerStackIcon className={iconClasses} />,
     },
     {
-      id: "craft",
-      name: "Craft",
-      shortcut: ["C"],
-      keywords: "craft",
+      id: "experiments",
+      name: "Experiments",
+      shortcut: ["E"],
+      keywords: "experiments",
       section: "On this site",
-      perform: () => router.push("/craft"),
+      perform: () => router.push("/experiments"),
       icon: <BeakerIcon className={iconClasses} />,
     },
     {
@@ -163,11 +163,14 @@ const RenderResults = () => {
         items={results}
         onRender={({ item, active }) =>
           typeof item === "string" ? (
-            <div className="pt-4 pl-4 pb-2 text-xs font-medium text-tertiary">
+            <div
+              className="pt-4 pl-4 pb-2 box-border text-xs font-medium text-tertiary"
+              key={item}
+            >
               {item}
             </div>
           ) : (
-            <ResultItem active={active} item={item} />
+            <ResultItem active={active} item={item} key={item.id} />
           )
         }
       />
@@ -183,10 +186,11 @@ type TResultProps = {
 const ResultItem = ({ active, item }: TResultProps) => {
   return (
     <div
-      className={`px-4 py-3 flex items-center box-border group ${
+      className={`px-4 py-3 overflow-hidden flex items-center box-border group ${
         active ? "text-primary bg-secondary" : "text-secondary bg-transparent"
       }`}
       aria-selected={active}
+      key={item.id}
     >
       {item.icon}
       {item.name}{" "}
