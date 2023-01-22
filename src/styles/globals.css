@@ -44,3 +44,13 @@ html {
   --color-bg-core: #18181b;
   --color-border-primary: #3b82f6;
 }
+
+/* Chrome, Safari and Opera */
+.hide_scrollbar > div::-webkit-scrollbar {
+  display: none !important;
+}
+
+.hide_scrollbar > div {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

@@ -158,7 +158,7 @@ const RenderResults = () => {
   }
 
   return (
-    <div className="pt-0 pb-4">
+    <div className="pt-0 pb-4 hide_scrollbar">
       <KBarResults
         items={results}
         onRender={({ item, active }) =>
