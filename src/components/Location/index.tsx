@@ -25,7 +25,7 @@ const Location = () => {
       }
     }
 
-    getCurrentWeather();
+    // getCurrentWeather();
   }, []);
 
   const { tempInCelsius, tempInFahrenheit } = convertFromKelvin(
@@ -40,9 +40,9 @@ const Location = () => {
         </span>
         <span className="text-zinc-400 text-xs mr-2">{CURRENT_LOCATION}</span>
       </div>
-      <span className="text-zinc-100 text-xs mt-1 mr-2 text-right">
+      {/* <span className="text-zinc-100 text-xs mt-1 mr-2 text-right">
         {tempInCelsius}/{tempInFahrenheit}
-      </span>
+      </span> */}
     </section>
   );
 };

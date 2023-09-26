@@ -13,7 +13,7 @@ const Info = () => {
           Usually work with Javascript/Typescript, within the React Ecosystem.
         </p>
         <p className="text-sm text-gray-200 mt-2 leading-[1.5em]">
-          Tinkering with Animations, Python, Figma & Go.
+          Tinkering with Animations, Python, Figma & Rust.
         </p>
         <p className="text-sm text-gray-200 mt-2 leading-[1.5em]">
           Currently enriching meeting experiences at{" "}
