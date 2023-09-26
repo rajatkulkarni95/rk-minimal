@@ -10,12 +10,12 @@ import {
   Action,
 } from "kbar";
 import {
-  BeakerIcon,
   BookmarkIcon,
   CodeBracketIcon,
   EyeIcon,
   HomeIcon,
   ServerStackIcon,
+  BriefcaseIcon,
 } from "@heroicons/react/20/solid";
 import TwitterIcon from "@svg/twitter.svg";
 import LinkedinIcon from "@svg/linkedin.svg";
@@ -61,22 +61,13 @@ const CommandBar = ({ children }: TProps) => {
       icon: <ServerStackIcon className={iconClasses} />,
     },
     {
-      id: "experiments",
-      name: "Experiments",
+      id: "experience",
+      name: "Experience",
       shortcut: ["E"],
-      keywords: "experiments",
+      keywords: "experience",
       section: "On this site",
-      perform: () => router.push("/experiments"),
-      icon: <BeakerIcon className={iconClasses} />,
-    },
-    {
-      id: "about",
-      name: "About",
-      shortcut: ["A"],
-      keywords: "about",
-      section: "On this site",
-      perform: () => router.push("/about"),
-      icon: <EyeIcon className={iconClasses} />,
+      perform: () => router.push("/experience"),
+      icon: <BriefcaseIcon className={iconClasses} />,
     },
     {
       id: "source",

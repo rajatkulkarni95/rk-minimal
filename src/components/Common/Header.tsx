@@ -18,7 +18,6 @@ const Header = () => {
     <Fragment>
       <header className="w-full z-10 flex justify-between items-center sticky top-0 py-3 md:py-6 px-4 md:px-12">
         <Link href="/">{renderLogo()}</Link>
-        <CommandLineIcon className="h-8 w-8 text-primary" />
       </header>
     </Fragment>
   );

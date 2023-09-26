@@ -79,3 +79,35 @@ export const InternalHeaderLink = ({ href, text }: TProps) => {
     </Link>
   );
 };
+
+type TCTAProps = {
+  label: string | React.ReactNode;
+  onClick: () => void;
+  additionalStyles?: string;
+  small?: boolean;
+  disabled?: boolean;
+  icon?: JSX.Element;
+  smallText?: boolean;
+};
+
+export const CTAButton = ({
+  label,
+  onClick,
+  additionalStyles,
+  small,
+  smallText,
+  disabled,
+  icon,
+}: TCTAProps) => (
+  <button
+    className={`flex select-none items-center justify-center rounded-md border border-zinc-700 bg-secondary font-medium text-primary shadow-sm hover:bg-tertiary  ${additionalStyles} ${
+      small ? "py-1.5 px-3" : "py-3 px-8"
+    } ${smallText ? "text-s" : "text-sm"} ${
+      disabled ? "cursor-not-allowed opacity-50" : ""
+    }`}
+    onClick={onClick}
+    disabled={disabled}
+  >
+    {icon} {label}
+  </button>
+);
