@@ -1,12 +1,17 @@
 import type { NextPage } from "next";
-import MainContainer from "@components/MainContainer";
 import { Main } from "@components/Common/Main";
-import { TPageProps } from "src/types";
+import Greeting from "@components/Greeting";
+import Me from "@components/Me";
+import CommandShortcut from "@components/Common/CommandShortcut";
 
-const Home: NextPage<TPageProps> = ({ isSidebarOpen }: TPageProps) => {
+const Home: NextPage = () => {
   return (
-    <Main isSidebarOpen={isSidebarOpen}>
-      <MainContainer />
+    <Main>
+      <Greeting />
+      <Me />
+      <div className="mt-8">
+        <CommandShortcut />
+      </div>
     </Main>
   );
 };

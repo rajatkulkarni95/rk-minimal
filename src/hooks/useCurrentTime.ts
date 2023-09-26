@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useInterval } from "./useInterval";
 
 export const useCurrentTime = () => {
+  const [date, setDate] = useState<Date>(new Date());
   const [currentTime, setCurrentTime] = useState<string>("00:00");
-  const date = new Date();
-  useInterval(() => {
+  const [currentDay, setCurrentDay] = useState<string>("");
+
+  const formatTime = () => {
     const getCurrentTime = date.getTime();
     const getCurrentTimezoneOffset = date.getTimezoneOffset();
 
@@ -16,11 +18,20 @@ export const useCurrentTime = () => {
     const displayTime = myLocalTime.toTimeString()?.slice(0, 5);
 
     setCurrentTime(displayTime);
-  }, 1000);
+    setCurrentDay(
+      new Intl.DateTimeFormat("en-US", {
+        weekday: "long",
+      }).format(date)
+    );
+  };
 
-  const currentDay = new Intl.DateTimeFormat("en-US", {
-    weekday: "short",
-  }).format(date);
+  useInterval(() => {
+    setDate(new Date());
+  }, 15 * 1000);
+
+  useEffect(() => {
+    formatTime();
+  }, [date]);
 
   return { currentTime, currentDay };
 };

@@ -29,7 +29,6 @@ export interface NexusGenScalars {
 
 export interface NexusGenObjects {
   Bookmark: { // root type
-    description?: string | null; // String
     faviconUrl?: string | null; // String
     image?: string | null; // String
     tagUuid?: string | null; // String
@@ -41,8 +40,6 @@ export interface NexusGenObjects {
   Query: {};
   Tag: { // root type
     background: string; // String!
-    border: string; // String!
-    color: string; // String!
     name: string; // String!
     uuid: string; // String!
   }
@@ -60,7 +57,6 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Bookmark: { // field return type
-    description: string | null; // String
     faviconUrl: string | null; // String
     image: string | null; // String
     tag: NexusGenRootTypes['Tag'] | null; // Tag
@@ -82,8 +78,6 @@ export interface NexusGenFieldTypes {
   Tag: { // field return type
     background: string; // String!
     bookmarks: Array<NexusGenRootTypes['Bookmark'] | null> | null; // [Bookmark]
-    border: string; // String!
-    color: string; // String!
     name: string; // String!
     uuid: string; // String!
   }
@@ -91,7 +85,6 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenFieldTypeNames {
   Bookmark: { // field return type name
-    description: 'String'
     faviconUrl: 'String'
     image: 'String'
     tag: 'Tag'
@@ -113,8 +106,6 @@ export interface NexusGenFieldTypeNames {
   Tag: { // field return type name
     background: 'String'
     bookmarks: 'Bookmark'
-    border: 'String'
-    color: 'String'
     name: 'String'
     uuid: 'String'
   }
@@ -130,8 +121,6 @@ export interface NexusGenArgTypes {
     }
     createTag: { // args
       background: string; // String!
-      border: string; // String!
-      color: string; // String!
       name: string; // String!
     }
   }

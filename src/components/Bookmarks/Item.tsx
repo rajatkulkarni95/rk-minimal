@@ -12,7 +12,7 @@ export const BookmarkItem = ({ title, url, tag }: IBookmarkItem) => {
     <div className="flex-col mb-4">
       <div className="flex justify-between">
         <a
-          className="inline-block max-w-[220px] flex flex-col lg:max-w-md"
+          className="max-w-[220px] flex flex-col lg:max-w-md"
           href={url}
           target="_blank"
           rel="noreferrer"
@@ -24,12 +24,7 @@ export const BookmarkItem = ({ title, url, tag }: IBookmarkItem) => {
             {url.replace("https://", "")}
           </p>
         </a>
-        <BookmarkTag
-          background={tag?.background}
-          border={tag?.border}
-          color={tag?.color}
-          name={tag?.name}
-        />
+        <BookmarkTag background={tag?.background} name={tag?.name} />
       </div>
     </div>
   );

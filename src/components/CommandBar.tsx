@@ -1,0 +1,220 @@
+import { useRouter } from "next/router";
+import {
+  KBarAnimator,
+  KBarProvider,
+  KBarPortal,
+  useMatches,
+  KBarPositioner,
+  KBarSearch,
+  KBarResults,
+  Action,
+} from "kbar";
+import {
+  BookmarkIcon,
+  CodeBracketIcon,
+  EyeIcon,
+  HomeIcon,
+  ServerStackIcon,
+  BriefcaseIcon,
+} from "@heroicons/react/20/solid";
+import TwitterIcon from "@svg/twitter.svg";
+import LinkedinIcon from "@svg/linkedin.svg";
+import CVIcon from "@svg/cv.svg";
+import GithubIcon from "@svg/github.svg";
+import CampsiteIcon from "@svg/campsite.svg";
+
+type TProps = {
+  children: React.ReactNode;
+};
+
+const CommandBar = ({ children }: TProps) => {
+  const router = useRouter();
+
+  const iconClasses = `w-4 h-4 block mr-2 text-secondary group-hover:text-primary group-hover:animate-wiggle group-aria-selected:text-primary group-aria-selected:animate-wiggle`;
+
+  const actions = [
+    {
+      id: "home",
+      name: "Home",
+      shortcut: ["H"],
+      keywords: "home",
+      section: "On this site",
+      perform: () => router.push("/"),
+      icon: <HomeIcon className={iconClasses} />,
+    },
+    {
+      id: "reading-list",
+      name: "Reading List",
+      shortcut: ["R", "L"],
+      keywords: "reading list",
+      section: "On this site",
+      perform: () => router.push("/reading"),
+      icon: <BookmarkIcon className={iconClasses} />,
+    },
+    {
+      id: "projects",
+      name: "Projects",
+      shortcut: ["P"],
+      keywords: "projects",
+      section: "On this site",
+      perform: () => router.push("/projects"),
+      icon: <ServerStackIcon className={iconClasses} />,
+    },
+    {
+      id: "experience",
+      name: "Experience",
+      shortcut: ["E"],
+      keywords: "experience",
+      section: "On this site",
+      perform: () => router.push("/experience"),
+      icon: <BriefcaseIcon className={iconClasses} />,
+    },
+    {
+      id: "source",
+      name: "View Source",
+      shortcut: ["V", "S"],
+      keywords: "view source",
+      section: "On this site",
+      perform: () =>
+        window.open("https://github.com/rajatkulkarni95/rk-minimal", "_blank"),
+      icon: <CodeBracketIcon className={iconClasses} />,
+    },
+    {
+      id: "github",
+      name: "Github",
+      shortcut: ["G", "H"],
+      keywords: "github",
+      section: "On the web",
+      perform: () =>
+        window.open("https://github.com/rajatkulkarni95/", "_blank"),
+      icon: <GithubIcon className={iconClasses} />,
+    },
+    {
+      id: "twitter",
+      name: "Twitter",
+      shortcut: ["T", "W"],
+      keywords: "twitter",
+      section: "On the web",
+      perform: () => window.open("https://twitter.com/jokingRajat", "_blank"),
+      icon: <TwitterIcon className={iconClasses} />,
+    },
+    {
+      id: "linkedin",
+      name: "LinkedIn",
+      shortcut: ["L", "I"],
+      keywords: "linkedin",
+      section: "On the web",
+      perform: () =>
+        window.open("https://www.linkedin.com/in/rajatkulkarni95/", "_blank"),
+      icon: <LinkedinIcon className={iconClasses} />,
+    },
+    {
+      id: "campsite",
+      name: "Campsite",
+      shortcut: ["C", "S"],
+      keywords: "campsite",
+      section: "On the web",
+      perform: () =>
+        window.open(
+          "https://app.campsite.design/design/people/rajat",
+          "_blank"
+        ),
+      icon: <CampsiteIcon className={iconClasses} />,
+    },
+    {
+      id: "readcv",
+      name: "read.cv",
+      shortcut: ["R", "C"],
+      keywords: "readcv",
+      section: "On the web",
+      perform: () => window.open("https://read.cv/rajatk", "_blank"),
+      icon: <CVIcon className={iconClasses} />,
+    },
+  ];
+
+  return (
+    <KBarProvider actions={actions}>
+      <KBarPortal>
+        <KBarPositioner className="fixed flex items-start justify-center w-full inset-0 overflow-hidden backdrop-blur-sm">
+          <KBarAnimator className="bg-element border border-secondary rounded-lg max-w-[640px] w-full text-primary overflow-hidden">
+            <KBarSearch
+              defaultPlaceholder="What do you want?"
+              className="bg-transparent text-primary text-sm outline-none w-full p-4 border-b border-secondary"
+            />
+            <RenderResults />
+          </KBarAnimator>
+        </KBarPositioner>
+      </KBarPortal>
+
+      {children}
+    </KBarProvider>
+  );
+};
+
+const RenderResults = () => {
+  const { results } = useMatches();
+
+  if (results.length === 0) {
+    return (
+      <div className="flex items-center justify-center text-sm h-16 text-secondary">
+        I don't know what you are talking about
+      </div>
+    );
+  }
+
+  return (
+    <div className="pt-0 pb-4 hide_scrollbar">
+      <KBarResults
+        items={results}
+        onRender={({ item, active }) =>
+          typeof item === "string" ? (
+            <div
+              className="pt-4 pl-4 pb-2 box-border text-xs font-medium text-tertiary"
+              key={item}
+            >
+              {item}
+            </div>
+          ) : (
+            <ResultItem active={active} item={item} key={item.id} />
+          )
+        }
+      />
+    </div>
+  );
+};
+
+type TResultProps = {
+  active: boolean;
+  item: Action;
+};
+
+const ResultItem = ({ active, item }: TResultProps) => {
+  return (
+    <div
+      className={`px-4 py-3 overflow-hidden text-sm flex items-center box-border group ${
+        active ? "text-primary bg-secondary" : "text-secondary bg-transparent"
+      }`}
+      aria-selected={active}
+      key={item.id}
+    >
+      {item.icon}
+      {item.name}{" "}
+      {item.shortcut && (
+        <span className="ml-auto">
+          {item.shortcut.map((shortcut) => (
+            <kbd
+              key={`${shortcut}-${item.name}`}
+              className={`ml-1 px-1.5 py-1 font-sans font-medium text-xs bg-tertiary rounded text-secondary group-hover:text-primary ${
+                active ? "text-primary" : ""
+              }`}
+            >
+              {shortcut}
+            </kbd>
+          ))}
+        </span>
+      )}
+    </div>
+  );
+};
+
+export default CommandBar;

@@ -3,14 +3,12 @@
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
   provider             = "postgresql"
   url                  = env("DATABASE_URL")
   shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
-  referentialIntegrity = "prisma"
 }
 
 model Bookmark {
@@ -18,21 +16,17 @@ model Bookmark {
   title       String
   image       String?
   url         String   @unique
-  description String?
   tag         Tag      @relation(fields: [tagUuid], references: [uuid])
   tagUuid     String
   faviconUrl  String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-
 }
 
 model Tag {
   uuid       String     @id @default(cuid())
   name       String     @unique
   background String
-  border     String
-  color      String
   bookmarks  Bookmark[]
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt

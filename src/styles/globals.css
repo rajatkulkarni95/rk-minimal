@@ -2,67 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 ::selection {
-    background-color: #155e75;
-    color: #fefefe;
+  background-color: #0368ff;
+  color: #fefefe;
 }
 
 html {
-    min-width: 360px;
-    scroll-behavior: smooth;
+  min-width: 360px;
+  scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 #__next {
-    background-color: #18181B;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-weight: 400;
-    text-rendering: optimizeLegibility;
+  background-color: #18181b;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
 }
 
-.circle {
-    overflow: hidden;
-    position: relative;
+:root {
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #bbbbbb;
+  --color-text-prose-secondary: #e4e4e7;
+  --color-text-tertiary: #a1a1aa;
+  --color-text-subtle: #71717a;
+  --color-bg-primary: #0f0f10;
+  --color-bg-element: #18181b;
+  --color-bg-secondary: #27272a;
+  --color-bg-tertiary: #3f3f46;
+  --color-bg-accent: #1d1d20;
+  --color-bg-extreme: #0f0f10;
+  --color-border: #3f3f46;
+  --color-border-secondary: #52525b;
+  --color-icon: #e4e4e7;
+  --color-app-primary: #7c3aed;
+  --color-app-sidebar: #151516;
+  --color-bg-code: #1e1e21;
+  --color-bg-cta: #ffffff;
+  --color-text-cta: #18181b;
+  --color-bg-core: #18181b;
+  --color-border-primary: #3b82f6;
 }
 
-.circle:before {
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-    box-shadow: inset 0 0 0 1px #e5e7eb;
-    content: "";
+/* Chrome, Safari and Opera */
+.hide_scrollbar > div::-webkit-scrollbar {
+  display: none !important;
 }
 
-@keyframes revealCircle {
-    to {
-        transform: rotate(180deg);
-    }
-}
-
-.circle .cover {
-    position: absolute;
-    margin: 0 -50%;
-    width: 200%;
-    height: inherit;
-    transform-origin: 50% 0;
-    background: #181818;
-    animation: revealCircle 0.75s linear forwards;
-    animation-delay: 1500ms;
-}
-
-.circle .cover.inner-2 {
-    animation-delay: 2000ms;
-}
-
-.circle .cover.inner-3 {
-    animation-delay: 2500ms;
-}
-
-.circle .cover.inner-4 {
-    animation-delay: 3000ms;
-}
-
-.circle .cover.inner-5 {
-    animation-delay: 3500ms;
+.hide_scrollbar > div {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
