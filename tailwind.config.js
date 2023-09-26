@@ -87,6 +87,7 @@ module.exports = {
       },
     },
     fontFamily: {
+      ...fontFamily,
       sans: ["Karla", ...fontFamily.sans],
     },
   },

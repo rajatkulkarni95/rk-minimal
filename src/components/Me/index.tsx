@@ -1,7 +1,7 @@
 const Me = () => {
   return (
     <article className="flex flex-col mt-10">
-      <p className="text-base lg:text-xl font-normal text-primary inline-block">
+      <p className="text-sm lg:text-xl font-normal text-primary inline-block">
         Currently responsible for all things frontend at{" "}
         <a
           href="https://avoma.com"
@@ -12,11 +12,10 @@ const Me = () => {
         </a>{" "}
         , helping build enriching meeting experiences.
       </p>
-      <p className="text-base lg:text-xl font-normal text-primary mt-6">
-        Work with React, Typescript and Python. Learning Go and Rust via
-        building.
+      <p className="text-sm lg:text-xl font-normal text-primary mt-6">
+        Work with React, Typescript and Python. Learning Rust via building.
       </p>
-      <p className="text-base lg:text-xl font-normal text-primary mt-12">
+      <p className="text-sm lg:text-xl font-normal text-primary mt-12">
         Building{" "}
         <a
           href="https://octarine.app"

@@ -21,6 +21,7 @@ import TwitterIcon from "@svg/twitter.svg";
 import LinkedinIcon from "@svg/linkedin.svg";
 import CVIcon from "@svg/cv.svg";
 import GithubIcon from "@svg/github.svg";
+import CampsiteIcon from "@svg/campsite.svg";
 
 type TProps = {
   children: React.ReactNode;
@@ -117,6 +118,19 @@ const CommandBar = ({ children }: TProps) => {
       icon: <LinkedinIcon className={iconClasses} />,
     },
     {
+      id: "campsite",
+      name: "Campsite",
+      shortcut: ["C", "S"],
+      keywords: "campsite",
+      section: "On the web",
+      perform: () =>
+        window.open(
+          "https://app.campsite.design/design/people/rajat",
+          "_blank"
+        ),
+      icon: <CampsiteIcon className={iconClasses} />,
+    },
+    {
       id: "readcv",
       name: "read.cv",
       shortcut: ["R", "C"],
@@ -134,7 +148,7 @@ const CommandBar = ({ children }: TProps) => {
           <KBarAnimator className="bg-element border border-secondary rounded-lg max-w-[640px] w-full text-primary overflow-hidden">
             <KBarSearch
               defaultPlaceholder="What do you want?"
-              className="bg-transparent text-primary outline-none w-full p-4 border-b border-secondary"
+              className="bg-transparent text-primary text-sm outline-none w-full p-4 border-b border-secondary"
             />
             <RenderResults />
           </KBarAnimator>
@@ -151,7 +165,7 @@ const RenderResults = () => {
 
   if (results.length === 0) {
     return (
-      <div className="flex items-center justify-center h-16 text-secondary">
+      <div className="flex items-center justify-center text-sm h-16 text-secondary">
         I don't know what you are talking about
       </div>
     );
@@ -186,7 +200,7 @@ type TResultProps = {
 const ResultItem = ({ active, item }: TResultProps) => {
   return (
     <div
-      className={`px-4 py-3 overflow-hidden flex items-center box-border group ${
+      className={`px-4 py-3 overflow-hidden text-sm flex items-center box-border group ${
         active ? "text-primary bg-secondary" : "text-secondary bg-transparent"
       }`}
       aria-selected={active}
