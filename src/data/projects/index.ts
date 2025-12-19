@@ -23,7 +23,7 @@ export const projects = [
     description: "Vercel Deployments in the Menu Bar",
     meta: ["NextJS", "TypeScript", "Tailwind", "Rust"],
     code: "https://github.com/rajatkulkarni95/buildlog",
-    site: "https://buildlog.fyi/",
+    site: "https://github.com/rajatkulkarni95/buildlog",
     wip: false,
   },
   {
