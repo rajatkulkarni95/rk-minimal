@@ -1,8 +1,22 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 const Info = () => {
   const [showCats, setShowCats] = useState(false);
+  const [showAbove, setShowAbove] = useState(true);
+  const triggerRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (showCats && triggerRef.current) {
+      const rect = triggerRef.current.getBoundingClientRect();
+      const imageHeight = 320; // w-80 = 320px, assume roughly square
+      const spaceAbove = rect.top;
+      const spaceBelow = window.innerHeight - rect.bottom;
+
+      // Show below if not enough space above, otherwise show above
+      setShowAbove(spaceAbove >= imageHeight + 16);
+    }
+  }, [showCats]);
 
   return (
     <section className="space-y-4">
@@ -21,6 +35,7 @@ const Info = () => {
         When not responding to users or fixing a bug, you can see me playing
         with my 2 adorable cats —{" "}
         <span
+          ref={triggerRef}
           className="relative inline-block"
           onMouseEnter={() => setShowCats(true)}
           onMouseLeave={() => setShowCats(false)}
@@ -29,7 +44,11 @@ const Info = () => {
             Stella and Mylo
           </span>
           {showCats && (
-            <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-10 w-80">
+            <span
+              className={`absolute left-1/2 -translate-x-1/2 z-10 w-80 ${
+                showAbove ? "bottom-full mb-2" : "top-full mt-2"
+              }`}
+            >
               <Image
                 src="/cats.png"
                 alt="Stella and Mylo"

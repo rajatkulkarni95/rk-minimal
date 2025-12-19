@@ -4,7 +4,7 @@ import Link from "next/link";
 const ErrorPage: NextPage = () => {
   return (
     <div className="flex-1 flex flex-col items-center justify-center px-6 py-12">
-      <h3 className="text-sm text-zinc-500 dark:text-zinc-400 mb-8 text-center">
+      <h3 className="text-sm text-zinc-600 dark:text-zinc-400 mb-8 text-center">
         Look, between the two of us, you really shouldn't be here!
       </h3>
       <Link

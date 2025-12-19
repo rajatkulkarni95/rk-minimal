@@ -14,7 +14,7 @@ export const links = [
   {
     id: 3,
     label: "Come hang out on the Octarine",
-    name: "discord",
+    name: "Discord",
     url: "https://octarine.app/discord",
   },
 ];
