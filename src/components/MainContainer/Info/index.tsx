@@ -21,10 +21,9 @@ const Info = () => {
   return (
     <section className="space-y-4">
       <p className="text-base text-zinc-900 dark:text-white leading-relaxed">
-        I'm a frontend engineer turned do-whatever-needed engineer working on
-        Octarine, where I juggle my time between design, code, marketing and
-        customer support to help our users get the most out of their writing
-        tools.
+        I’m a frontend engineer turned “do-whatever’s-needed” engineer at
+        Octarine, juggling design, code, marketing, and customer support to help
+        writers get the most out of their tools.
       </p>
       <p className="text-base text-zinc-900 dark:text-white leading-relaxed">
         From India, my career has spanned diverse companies, from setting up

@@ -2,7 +2,7 @@ export const work = [
   {
     id: "001",
     company: "Octarine",
-    designation: "Indie",
+    designation: "Helping customers",
     time: "Present",
   },
   {
