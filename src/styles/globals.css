@@ -1,9 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 ::selection {
     background-color: #155e75;
     color: #fefefe;
+}
+
+@media (prefers-color-scheme: light) {
+    ::selection {
+        background-color: #0891b2;
+        color: #ffffff;
+    }
 }
 
 html {
@@ -12,57 +20,9 @@ html {
 }
 
 #__next {
-    background-color: #18181B;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-weight: 400;
     text-rendering: optimizeLegibility;
-}
-
-.circle {
-    overflow: hidden;
-    position: relative;
-}
-
-.circle:before {
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-    box-shadow: inset 0 0 0 1px #e5e7eb;
-    content: "";
-}
-
-@keyframes revealCircle {
-    to {
-        transform: rotate(180deg);
-    }
-}
-
-.circle .cover {
-    position: absolute;
-    margin: 0 -50%;
-    width: 200%;
-    height: inherit;
-    transform-origin: 50% 0;
-    background: #181818;
-    animation: revealCircle 0.75s linear forwards;
-    animation-delay: 1500ms;
-}
-
-.circle .cover.inner-2 {
-    animation-delay: 2000ms;
-}
-
-.circle .cover.inner-3 {
-    animation-delay: 2500ms;
-}
-
-.circle .cover.inner-4 {
-    animation-delay: 3000ms;
-}
-
-.circle .cover.inner-5 {
-    animation-delay: 3500ms;
 }

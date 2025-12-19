@@ -8,11 +8,11 @@ type TMainProps = {
 export const Main = ({ children, isSidebarOpen }: TMainProps) => {
   return (
     <main
-      className={`w-full h-full px-4 pb-4 mx-auto sm:w-11/12 md:w-3/4 md:mt-4 md:pb-10 ${
-        isSidebarOpen && "opacity-60"
+      className={`flex-1 flex items-center justify-center px-6 py-12 md:py-24 ${
+        isSidebarOpen ? "opacity-60" : ""
       }`}
     >
-      <div className="mx-auto md:overflow-y-auto lg:pb-16 lg:w-[720px]">
+      <div className="w-full max-w-xl">
         {children}
       </div>
     </main>

@@ -4,14 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
         <link href="/img/favicon.ico" rel="shortcut icon" />
         <link href="/img/meta/site.webmanifest" rel="manifest" />
         <link
@@ -31,10 +23,11 @@ export default function Document() {
           sizes="16x16"
           type="image/png"
         />
-        <meta content="#18181D" name="theme-color" />
+        <meta content="#18181D" name="theme-color" media="(prefers-color-scheme: dark)" />
+        <meta content="#f4f4f5" name="theme-color" media="(prefers-color-scheme: light)" />
         <meta content="#18181D" name="msapplication-TileColor" />
       </Head>
-      <body className="bg-white dark:bg-black text-white dark:text-black font-mono antialiased">
+      <body className="bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-white font-sans antialiased">
         <Main />
         <NextScript />
       </body>
