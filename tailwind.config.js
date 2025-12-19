@@ -5,7 +5,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class",
+  darkMode: "media",
   theme: {
     extend: {
       keyframes: {
@@ -40,7 +40,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      mono: ["Roboto Mono", ...fontFamily.mono],
+      sans: ["var(--font-ia-quattro)", ...fontFamily.sans],
+      mono: ["var(--font-ia-quattro)", ...fontFamily.mono],
     },
   },
   plugins: [],

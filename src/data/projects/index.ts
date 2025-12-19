@@ -1,12 +1,12 @@
 export const projects = [
   {
     id: "001",
-    title: "Octarine",
-    description: "Take back control of your writing",
-    meta: ["React", "TypeScript", "Tailwind", "Rust"],
-    site: "https://octarine.app/",
+    title: "Diff",
+    description: "Review code without the friction.",
+    meta: [],
+    site: "https://diff.reviews",
     code: "",
-    wip: true,
+    wip: false,
   },
   {
     id: "002",
@@ -35,14 +35,5 @@ export const projects = [
     code: "https://github.com/rajatkulkarni95/hckrnws",
     site: "https://hckrnws.com/",
     wip: false,
-  },
-  {
-    id: "005",
-    title: "Codestash",
-    description: "All of your team's snippets in one beautiful place!",
-    meta: ["NextJS", "Typescript", "Planetscale", "Stitches"],
-    site: "https://codestash.app",
-    code: "",
-    wip: true,
   },
 ];

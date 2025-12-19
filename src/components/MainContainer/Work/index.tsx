@@ -1,26 +1,38 @@
-import React, { Fragment } from "react";
 import { work } from "@data/work";
 
 const Work = () => {
+  const currentJob = work[0];
+  const previousJobs = work.slice(1);
+
   return (
-    <section className="flex flex-col mt-6 md:flex-row md:items-baseline opacity-0 [animation-delay:2500ms] animate-fadeIn">
-      <span className="text-[11px] text-pink-300 uppercase md:w-12 md:text-right">
-        Work
-      </span>
-      <section className="grid grid-cols-[160px_60px_100px] gap-x-4 gap-y-4 mt-2 md:ml-4 md:grid-cols-[225px_100px_250px]">
-        {work.map((exp) => (
-          <Fragment key={exp.id}>
-            <span className="text-xs text-gray-300 md:text-sm">
-              {exp.designation}
-            </span>
-            <span className="text-xs text-white md:text-sm">{exp.company}</span>
-            <span className="text-[11px] text-gray-300 md:text-sm">
-              {exp.time}
-            </span>
-          </Fragment>
-        ))}
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xs text-zinc-600 dark:text-zinc-300 mb-3">Current</h2>
+        <p className="text-sm text-zinc-600 dark:text-zinc-300">
+          {currentJob.designation} at{" "}
+          <a
+            href="https://octarine.app"
+            target="_blank"
+            rel="noreferrer"
+            className="text-zinc-900 dark:text-white hover:underline"
+          >
+            {currentJob.company}
+          </a>
+        </p>
       </section>
-    </section>
+
+      <section>
+        <h2 className="text-xs text-zinc-600 dark:text-zinc-300 mb-3">Previous</h2>
+        <div className="space-y-2">
+          {previousJobs.map((exp) => (
+            <p key={exp.id} className="text-sm text-zinc-600 dark:text-zinc-300">
+              {exp.designation} at{" "}
+              <span className="text-zinc-900 dark:text-white">{exp.company}</span>
+            </p>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 };
 

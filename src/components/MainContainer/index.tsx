@@ -1,20 +1,21 @@
-import { SALUTATIONS } from "@constants/salutations";
-import Greeting from "@components/Greeting";
 import Info from "@components/MainContainer/Info";
 import Projects from "@components/MainContainer/Projects";
 import Work from "@components/MainContainer/Work";
-import { Fragment } from "react";
+import Links from "@components/MainContainer/Links";
 
 const MainContainer = () => {
-  const salutation =
-    SALUTATIONS[Math.floor(Math.random() * SALUTATIONS.length)];
   return (
-    <Fragment>
-      <Greeting salutation={salutation} />
+    <div className="space-y-12">
+      <header>
+        <h1 className="text-base font-semibold text-zinc-900 dark:text-white mb-8">
+          Rajat Kulkarni
+        </h1>
+      </header>
       <Info />
-      <Projects />
       <Work />
-    </Fragment>
+      <Projects />
+      <Links />
+    </div>
   );
 };
 
