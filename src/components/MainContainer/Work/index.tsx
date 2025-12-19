@@ -39,7 +39,7 @@ const Work = () => {
                   {exp.company}
                 </span>
               </span>
-              <span>{exp.time}</span>
+              <span className="hidden sm:inline">{exp.time}</span>
             </p>
           ))}
         </div>
