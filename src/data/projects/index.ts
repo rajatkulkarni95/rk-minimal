@@ -2,7 +2,7 @@ export const projects = [
   {
     id: "001",
     title: "Diff",
-    description: "Review code without the friction.",
+    description: "Review code without the friction",
     meta: [],
     site: "https://diff.reviews",
     code: "",
@@ -29,8 +29,7 @@ export const projects = [
   {
     id: "004",
     title: "hckrnws",
-    description:
-      "A custom frontend for a better reading experience of HackerNews.",
+    description: "Better reading experience for HackerNews",
     meta: ["NextJS", "TypeScript", "Stitches", "Preact"],
     code: "https://github.com/rajatkulkarni95/hckrnws",
     site: "https://hckrnws.com/",

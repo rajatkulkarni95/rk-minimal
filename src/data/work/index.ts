@@ -2,14 +2,14 @@ export const work = [
   {
     id: "001",
     company: "Octarine",
-    designation: "Maker",
+    designation: "Indie",
     time: "Present",
   },
   {
     id: "002",
     company: "Avoma",
     designation: "Lead Engineer",
-    time: "Mar 2021 - Dec 2024",
+    time: "Mar 2021 - Aug 2025",
   },
   {
     id: "003",

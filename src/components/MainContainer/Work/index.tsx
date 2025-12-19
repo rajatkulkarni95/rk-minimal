@@ -7,14 +7,14 @@ const Work = () => {
   return (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xs text-zinc-600 dark:text-zinc-300 mb-3">Current</h2>
-        <p className="text-sm text-zinc-600 dark:text-zinc-300">
+        <h2 className="text-xs text-zinc-500 dark:text-zinc-400 mb-3">Current</h2>
+        <p className="text-sm text-zinc-500 dark:text-zinc-400">
           {currentJob.designation} at{" "}
           <a
             href="https://octarine.app"
             target="_blank"
             rel="noreferrer"
-            className="text-zinc-900 dark:text-white hover:underline"
+            className="text-zinc-900 dark:text-white hover:underline underline-offset-2"
           >
             {currentJob.company}
           </a>
@@ -22,12 +22,15 @@ const Work = () => {
       </section>
 
       <section>
-        <h2 className="text-xs text-zinc-600 dark:text-zinc-300 mb-3">Previous</h2>
+        <h2 className="text-xs text-zinc-500 dark:text-zinc-400 mb-3">Previous</h2>
         <div className="space-y-2">
           {previousJobs.map((exp) => (
-            <p key={exp.id} className="text-sm text-zinc-600 dark:text-zinc-300">
-              {exp.designation} at{" "}
-              <span className="text-zinc-900 dark:text-white">{exp.company}</span>
+            <p key={exp.id} className="text-sm text-zinc-500 dark:text-zinc-400 flex justify-between">
+              <span>
+                {exp.designation} at{" "}
+                <span className="text-zinc-900 dark:text-white">{exp.company}</span>
+              </span>
+              <span>{exp.time}</span>
             </p>
           ))}
         </div>
