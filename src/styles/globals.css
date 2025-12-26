@@ -26,3 +26,84 @@ html {
     font-weight: 400;
     text-rendering: optimizeLegibility;
 }
+
+/* Markdown article styles */
+.prose {
+    @apply text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed;
+}
+
+.prose > *:first-child {
+    @apply mt-0;
+}
+
+.prose h2 {
+    @apply text-sm font-semibold text-zinc-900 dark:text-white mt-4 mb-4;
+}
+
+.prose h3 {
+    @apply text-sm font-semibold text-zinc-900 dark:text-white mt-2 mb-3;
+}
+
+.prose p {
+    @apply mb-4 text-zinc-600 dark:text-zinc-400;
+}
+
+.prose a {
+    @apply text-zinc-900 dark:text-white underline underline-offset-2;
+}
+
+.prose strong {
+    @apply font-semibold text-zinc-900 dark:text-white;
+}
+
+.prose em {
+    @apply italic;
+}
+
+.prose ul {
+    @apply list-disc pl-4 mb-4 space-y-1;
+}
+
+.prose ol {
+    @apply list-decimal pl-4 mb-4 space-y-1;
+}
+
+.prose li {
+    @apply text-zinc-600 dark:text-zinc-400;
+}
+
+.prose blockquote {
+    @apply border-l-2 border-zinc-300 dark:border-zinc-700 pl-4 italic text-zinc-500 dark:text-zinc-500 my-4;
+}
+
+.prose hr {
+    @apply border-zinc-200 dark:border-zinc-800 my-4;
+}
+
+.prose code {
+    @apply bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-1.5 py-0.5 rounded text-xs font-mono;
+}
+
+.prose pre {
+    @apply bg-zinc-100 dark:bg-zinc-800 rounded-lg p-4 overflow-x-auto my-6;
+}
+
+.prose pre code {
+    @apply bg-transparent p-0 text-xs leading-relaxed;
+}
+
+.prose table {
+    @apply w-full my-6 text-sm;
+}
+
+.prose th {
+    @apply text-left font-semibold text-zinc-900 dark:text-white border-b border-zinc-300 dark:border-zinc-700 pb-2 pr-4;
+}
+
+.prose td {
+    @apply text-left text-zinc-600 dark:text-zinc-400 border-b border-zinc-200 dark:border-zinc-800 py-2 pr-4;
+}
+
+.prose img {
+    @apply rounded-lg my-6;
+}

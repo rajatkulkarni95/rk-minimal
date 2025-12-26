@@ -1,6 +1,7 @@
 import Info from "@components/MainContainer/Info";
 import Projects from "@components/MainContainer/Projects";
 import Work from "@components/MainContainer/Work";
+import Writing from "@components/MainContainer/Writing";
 import Links from "@components/MainContainer/Links";
 
 const MainContainer = () => {
@@ -14,6 +15,7 @@ const MainContainer = () => {
       <Info />
       <Work />
       <Projects />
+      <Writing />
       <Links />
     </div>
   );

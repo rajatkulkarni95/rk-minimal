@@ -11,7 +11,10 @@
         "next": "^16.1.0",
         "next-seo": "^6.7.0",
         "react": "^19.1.0",
-        "react-dom": "^19.1.0"
+        "react-dom": "^19.1.0",
+        "react-markdown": "^10.1.0",
+        "rehype-prism-plus": "^2.0.1",
+        "remark-gfm": "^4.0.1"
     },
     "devDependencies": {
         "@svgr/webpack": "^8.1.0",
