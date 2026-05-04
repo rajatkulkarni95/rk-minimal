@@ -13,7 +13,7 @@ export const projects = [
     title: "yack",
     description: "ChatGPT at your fingertips on Mac",
     meta: ["React", "TypeScript", "Tailwind", "Rust"],
-    site: "https://yack.fyi/",
+    site: "https://github.com/rajatkulkarni95/yack",
     code: "",
     wip: false,
   },
